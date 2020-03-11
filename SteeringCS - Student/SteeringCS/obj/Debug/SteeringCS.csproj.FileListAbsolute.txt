@@ -1,0 +1,27 @@
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\bin\Debug\SteeringCS.exe.config
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\obj\Debug\SteeringCS.csprojResolveAssemblyReference.cache
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\obj\Debug\SteeringCS.Form1.resources
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\obj\Debug\SteeringCS.Properties.Resources.resources
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\obj\Debug\SteeringCS.csproj.GenerateResource.Cache
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\bin\Debug\SteeringCS.exe
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\bin\Debug\SteeringCS.pdb
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\obj\Debug\SteeringCS.exe
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS\SteeringCS\obj\Debug\SteeringCS.pdb
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.exe.config
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.exe
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.pdb
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.exe
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.pdb
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csprojResolveAssemblyReference.cache
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.Form1.resources
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.Properties.Resources.resources
+C:\Users\p43341961\Dropbox\Windesheim\GP code\SteeringCS\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csproj.GenerateResource.Cache
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.exe.config
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.exe
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.pdb
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.Form1.resources
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.Properties.Resources.resources
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csproj.GenerateResource.cache
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.exe
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.pdb
+D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csprojAssemblyReference.cache
