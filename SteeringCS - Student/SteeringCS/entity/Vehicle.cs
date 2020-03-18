@@ -18,7 +18,7 @@ namespace SteeringCS.entity
 
             VColor = Color.Black;
         }
-        
+
         public override void Render(Graphics g)
         {
             double leftCorner = Pos.X - Scale;

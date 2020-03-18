@@ -25,3 +25,12 @@ D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.cspro
 D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.exe
 D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.pdb
 D:\storage\AAI\Week 1\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csprojAssemblyReference.cache
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.exe.config
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.exe
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\bin\Debug\SteeringCS.pdb
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csprojAssemblyReference.cache
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.Form1.resources
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.Properties.Resources.resources
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.csproj.GenerateResource.cache
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.exe
+C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\SteeringCS - Student\SteeringCS\obj\Debug\SteeringCS.pdb

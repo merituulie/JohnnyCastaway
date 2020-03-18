@@ -26,8 +26,7 @@ namespace SteeringCS
         private void populate()
         {
             Vehicle v = new Vehicle(new Vector2D(200,200), this);
-            v.VColor = Color.Blue;
-            v.SB = new FleeBehaviour(v);
+            v.SB = new ArriveBehaviour(v);
             entities.Add(v);
 
             //Vehicle vg = new Vehicle(new Vector2D(60, 60), this);

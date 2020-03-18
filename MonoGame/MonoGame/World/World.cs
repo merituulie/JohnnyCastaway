@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace MonoGame
 {
@@ -24,7 +26,7 @@ namespace MonoGame
         private void populate()
         {
             Vehicle v = new Vehicle(new Vector2D(200, 200), this);
-            v.VColor = Color.Blue;
+            v.VColor = System.Drawing.Color.Black;
             v.SB = new FleeBehaviour(v);
             entities.Add(v);
 
@@ -33,7 +35,7 @@ namespace MonoGame
             //entities.Add(vg);
 
             Target = new Vehicle(new Vector2D(100, 60), this);
-            Target.VColor = Color.DarkRed;
+            Target.VColor = System.Drawing.Color.DarkRed;
             Target.Pos = new Vector2D(100, 40);
         }
 

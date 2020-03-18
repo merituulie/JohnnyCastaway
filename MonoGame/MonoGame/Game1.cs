@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Windows.Forms;
 
 namespace MonoGame
 {
@@ -97,6 +98,7 @@ namespace MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            PaintEventArgs e;
             // TODO: Add your drawing code here
             world.Render();
 
