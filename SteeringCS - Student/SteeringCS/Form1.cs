@@ -16,7 +16,7 @@ namespace SteeringCS
         System.Timers.Timer timer;
 
         public const float timeDelta = 0.8f;
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -43,6 +43,11 @@ namespace SteeringCS
         private void dbPanel1_MouseClick(object sender, MouseEventArgs e)
         {
             world.Target.Pos = new Vector2D(e.X, e.Y);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

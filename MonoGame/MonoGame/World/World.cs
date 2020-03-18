@@ -2,9 +2,11 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace MonoGame
 {
@@ -30,7 +32,6 @@ namespace MonoGame
             Vehicle v = new Vehicle(new Vector2D(200, 200), this, g);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
-            entities.Add(v);
 
             //Vehicle vg = new Vehicle(new Vector2D(60, 60), this);
             //vg.VColor = Color.Green;

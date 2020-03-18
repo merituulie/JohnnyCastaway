@@ -35,20 +35,23 @@
             // 
             this.dbPanel1.BackColor = System.Drawing.Color.White;
             this.dbPanel1.Location = new System.Drawing.Point(0, 0);
+            this.dbPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dbPanel1.Name = "dbPanel1";
-            this.dbPanel1.Size = new System.Drawing.Size(1422, 773);
+            this.dbPanel1.Size = new System.Drawing.Size(1896, 951);
             this.dbPanel1.TabIndex = 0;
             this.dbPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.dbPanel1_Paint);
             this.dbPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dbPanel1_MouseClick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1421, 771);
+            this.ClientSize = new System.Drawing.Size(1895, 949);
             this.Controls.Add(this.dbPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Steering";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
