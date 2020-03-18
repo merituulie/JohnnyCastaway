@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace MonoGame
 
         public SteeringBehaviour SB { get; set; }
 
-        public MovingEntity(Vector2D pos, World w) : base(pos, w)
+        public MovingEntity(Vector2D pos, World w, GraphicsDeviceManager g) : base(pos, w, g)
         {
             Mass = 30;
             MaxSpeed = 150;
