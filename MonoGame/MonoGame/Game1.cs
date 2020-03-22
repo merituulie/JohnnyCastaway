@@ -1,11 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-<<<<<<< HEAD
 using System;
-=======
-using System.Windows.Forms;
->>>>>>> 9a2890c61de83f1baedcf837cab30a2dd57c4712
 
 namespace MonoGame
 {
@@ -104,11 +100,7 @@ namespace MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-<<<<<<< HEAD
             spriteBatch.Begin(transformMatrix: camera.Transform);
-=======
-            PaintEventArgs e;
->>>>>>> 9a2890c61de83f1baedcf837cab30a2dd57c4712
             // TODO: Add your drawing code here
             //world.Render(spriteBatch);
             spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
