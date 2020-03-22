@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
+using System.Windows.Forms;
 
 namespace MonoGame
 {
@@ -13,18 +13,21 @@ namespace MonoGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         World world;
-        Camera camera;
+        System.Timers.Timer timer;
 
         public const float timeDelta = 0.8f;
-        float timeElapsed;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.ApplyChanges();
             Content.RootDirectory = "Content";
-            camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0,0));
-            world = new World(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, graphics);
+
+            world = new World(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+
+            timer = new System.Timers.Timer();
+            timer.Elapsed += Timer_Elapsed;
+            timer.Interval = 20;
+            timer.Enabled = true;
         }
 
         /// <summary>
@@ -37,7 +40,6 @@ namespace MonoGame
         {
             // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
-            this.Window.AllowUserResizing = true;
             base.Initialize();
         }
 
@@ -49,6 +51,7 @@ namespace MonoGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -71,8 +74,6 @@ namespace MonoGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            timeElapsed = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 18;
-
             // TODO: Add your update logic here
             var mouseState = Mouse.GetState();
             if (mouseState.LeftButton == ButtonState.Pressed)
@@ -80,16 +81,13 @@ namespace MonoGame
                 world.Target.Pos = new Vector2D(mouseState.X, mouseState.Y);
             }
 
-            //world.Update(timeElapsed);
-            camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
-
-            foreach (MovingEntity me in world.entities)
-            {
-                me.Update(timeElapsed);
-            }
-
-
             base.Update(gameTime);
+        }
+
+        private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            world.Update(timeDelta);
+            //dbPanel1.Invalidate();
         }
 
         /// <summary>
@@ -100,39 +98,11 @@ namespace MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.Transform);
+            PaintEventArgs e;
             // TODO: Add your drawing code here
-            //world.Render(spriteBatch);
-            spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
-
-            world.entities.ForEach(e => e.Render(spriteBatch));
-            world.Target.Render(spriteBatch);
-
-            spriteBatch.End();
-
+            world.Render();
 
             base.Draw(gameTime);
-        }
-
-        private void InitWorld()
-        {
-
-        }
-
-        private void PopulateWorld()
-        {
-            Vehicle v = new Vehicle(new Vector2D(200, 200), world, graphics);
-            v.VColor = Color.Blue;
-            v.SB = new SeekBehaviour(v);
-            world.entities.Add(v);
-
-            //Vehicle vg = new Vehicle(new Vector2D(60, 60), this);
-            //vg.VColor = Color.Green;
-            //entities.Add(vg);
-
-            world.Target = new Vehicle(new Vector2D(100, 60), world, graphics);
-            world.Target.VColor = Color.DarkRed;
-            world.Target.Pos = new Vector2D(100, 40);
         }
     }
 }
