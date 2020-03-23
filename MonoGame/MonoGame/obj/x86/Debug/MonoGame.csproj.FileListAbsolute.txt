@@ -1,29 +1,3 @@
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.exe
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.pdb
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
-C:\Users\ntebo\source\repos\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
-<<<<<<< HEAD
-D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
-D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
-D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.exe
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.pdb
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -43,27 +17,5 @@ D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
-=======
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.exe
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.pdb
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\Merit\Documents\School\AI and Algorithms\AIProject\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
->>>>>>> 9a2890c61de83f1baedcf837cab30a2dd57c4712
+D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
+D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb

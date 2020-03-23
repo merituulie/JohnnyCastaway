@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGame
 {
@@ -13,17 +9,22 @@ namespace MonoGame
         public float Scale { get; set; }
         public World MyWorld { get; set; }
 
-        public BaseGameEntity(Vector2D pos, World w)
+        public Texture2D texture { get; set; }
+
+        public BaseGameEntity(Vector2D pos, World w, GraphicsDeviceManager g)
         {
             Pos = pos;
             MyWorld = w;
+            texture = new Texture2D(g.GraphicsDevice, 40, 40);
         }
 
         public abstract void Update(float delta);
 
-        public virtual void Render(Graphics g)
+        public virtual void Render(SpriteBatch s)
         {
-            g.FillEllipse(Brushes.Blue, new Rectangle((int)Pos.X, (int)Pos.Y, 10, 10));
+            //g.Draw(Brushes.Blue, new Rectangle((int)Pos.X, (int)Pos.Y, 10, 10));
+            //s.Draw(texture, new Vector2(200, 200));
+            s.Draw(texture, new Rectangle(0, 0, 40, 40), Color.Red);
         }
 
     }
