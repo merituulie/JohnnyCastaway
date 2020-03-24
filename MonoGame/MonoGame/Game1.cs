@@ -100,7 +100,7 @@ namespace MonoGame
             //world.Render(spriteBatch);
             spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
 
-            world.entities.ForEach(e => e.Render(spriteBatch));
+            world.entities.ForEach(e => e.Draw(spriteBatch)); // used to be Render call
             world.Target.Render(spriteBatch);
 
             spriteBatch.End();
