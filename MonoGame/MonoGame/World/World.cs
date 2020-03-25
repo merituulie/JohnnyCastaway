@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MonoGame
 {
-    class World
+    public class World
     {
         public List<MovingEntity> entities = new List<MovingEntity>();
         public Vehicle Target { get; set; }
@@ -23,6 +23,7 @@ namespace MonoGame
 
         private void populate()
         {
+            /*
             Vehicle v = new Vehicle(new Vector2D(200, 200), this, g);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
@@ -34,6 +35,7 @@ namespace MonoGame
             Target = new Vehicle(new Vector2D(100, 60), this, g);
             Target.VColor = Color.DarkRed;
             Target.Pos = new Vector2D(100, 40);
+            */
         }
 
         public void Update(float timeElapsed)

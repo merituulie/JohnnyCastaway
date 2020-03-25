@@ -3,7 +3,7 @@ using System;
 
 namespace MonoGame
 {
-    abstract class MovingEntity : BaseGameEntity
+    public abstract class MovingEntity : BaseGameEntity
     {
         public Vector2D Velocity { get; set; }
         public Vector2D Heading { get; set; }
@@ -13,7 +13,7 @@ namespace MonoGame
 
         public SteeringBehaviour SB { get; set; }
 
-        public MovingEntity(Vector2D pos, World w, GraphicsDeviceManager g) : base(pos, w, g)
+        public MovingEntity(Vector2D pos, Game1 w, GraphicsDeviceManager g) : base(pos, w, g)
         {
             Mass = 30;
             MaxSpeed = 150;

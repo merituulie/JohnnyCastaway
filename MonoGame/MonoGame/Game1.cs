@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace MonoGame
 {
@@ -11,19 +12,25 @@ namespace MonoGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        World world;
         Camera camera;
 
         public const float timeDelta = 0.8f;
         float timeElapsed;
 
+        List<MovingEntity> entities = new List<MovingEntity>();
+        public Vehicle Target { get; set; }
+        int Width { get; set; }
+        int Height { get; set; }
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
             camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
-            world = new World(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, graphics);
+            InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+            
+            //world = new World(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, graphics);
         }
 
         /// <summary>
@@ -75,12 +82,12 @@ namespace MonoGame
             var mouseState = Mouse.GetState();
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                world.Target.Pos = new Vector2D(mouseState.X, mouseState.Y);
+                Target.Pos = new Vector2D(mouseState.X, mouseState.Y);
             }
 
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 
-            foreach (MovingEntity me in world.entities)
+            foreach (MovingEntity me in entities)
             {
                 me.Update(timeElapsed);
             }
@@ -99,9 +106,7 @@ namespace MonoGame
             // TODO: Add your drawing code here
             //world.Render(spriteBatch);
             spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
-
-            world.entities.ForEach(e => e.Render(spriteBatch));
-            world.Target.Render(spriteBatch);
+            RenderWorld(spriteBatch);
 
             spriteBatch.End();
 
@@ -109,25 +114,39 @@ namespace MonoGame
             base.Draw(gameTime);
         }
 
-        private void InitWorld()
+        private void InitWorld(int w, int h)
         {
-
+            Width = w;
+            Height = h;
+            PopulateWorld();
         }
 
         private void PopulateWorld()
         {
-            Vehicle v = new Vehicle(new Vector2D(200, 200), world, graphics);
+
+            Target = new Vehicle(new Vector2D(100, 60), this, graphics);
+            Target.VColor = Color.DarkRed;
+            Target.Pos = new Vector2D(100, 40);
+
+            Vehicle v = new Vehicle(new Vector2D(200, 200), this, graphics);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
-            world.entities.Add(v);
+            entities.Add(v);
 
             //Vehicle vg = new Vehicle(new Vector2D(60, 60), this);
             //vg.VColor = Color.Green;
             //entities.Add(vg);
+        }
 
-            world.Target = new Vehicle(new Vector2D(100, 60), world, graphics);
-            world.Target.VColor = Color.DarkRed;
-            world.Target.Pos = new Vector2D(100, 40);
+        public void RenderWorld(SpriteBatch s)
+        {
+            entities.ForEach(e => e.Render(s));
+            Target.Render(s);
+        }
+
+        public Vector2D WrapAround(Vector2D position)
+        {
+            return new Vector2D((position.X + Width) % Width, (position.Y + Height) % Height);
         }
     }
 }

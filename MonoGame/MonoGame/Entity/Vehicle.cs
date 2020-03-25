@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGame
 {
-    class Vehicle : MovingEntity
+    public class Vehicle : MovingEntity
     {
         public Color VColor { get; set; }
 
         public Texture2D texture { get; set; }
 
-        public Vehicle(Vector2D pos, World w, GraphicsDeviceManager g) : base(pos, w, g)
+        public Vehicle(Vector2D pos, Game1 w, GraphicsDeviceManager g) : base(pos, w, g)
         {
             Velocity = new Vector2D(0, 0);
             Scale = 5;

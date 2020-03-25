@@ -19,3 +19,4 @@ D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache

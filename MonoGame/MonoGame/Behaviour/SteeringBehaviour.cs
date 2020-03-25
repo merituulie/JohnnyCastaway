@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonoGame
 {
-    abstract class SteeringBehaviour
+    public abstract class SteeringBehaviour
     {
         public MovingEntity ME { get; set; }
         public abstract Vector2D Calculate();
