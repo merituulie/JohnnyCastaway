@@ -22,8 +22,6 @@ namespace MonoGame
 
         public virtual void Render(SpriteBatch s)
         {
-            //g.Draw(Brushes.Blue, new Rectangle((int)Pos.X, (int)Pos.Y, 10, 10));
-            //s.Draw(texture, new Vector2(200, 200));
             s.Draw(texture, new Rectangle(0, 0, 40, 40), Color.Red);
         }
 

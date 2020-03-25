@@ -20,3 +20,4 @@ D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComple
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\preview_idle.xnb

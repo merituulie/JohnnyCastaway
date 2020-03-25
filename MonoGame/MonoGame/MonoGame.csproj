@@ -54,7 +54,6 @@
     <Compile Include="Util\Camera.cs" />
     <Compile Include="Util\LineRenderer.cs" />
     <Compile Include="Util\Vector2D.cs" />
-    <Compile Include="World\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

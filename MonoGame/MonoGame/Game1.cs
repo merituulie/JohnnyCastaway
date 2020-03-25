@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 
 namespace MonoGame
@@ -15,7 +16,6 @@ namespace MonoGame
         Camera camera;
 
         public const float timeDelta = 0.8f;
-        float timeElapsed;
 
         List<MovingEntity> entities = new List<MovingEntity>();
         public Vehicle Target { get; set; }
@@ -30,7 +30,6 @@ namespace MonoGame
             camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
             InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
             
-            //world = new World(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height, graphics);
         }
 
         /// <summary>
@@ -41,7 +40,6 @@ namespace MonoGame
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             this.IsMouseVisible = true;
             this.Window.AllowUserResizing = true;
             base.Initialize();
@@ -53,10 +51,8 @@ namespace MonoGame
         /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            
         }
 
         /// <summary>
@@ -78,7 +74,6 @@ namespace MonoGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
             var mouseState = Mouse.GetState();
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
@@ -89,8 +84,9 @@ namespace MonoGame
 
             foreach (MovingEntity me in entities)
             {
-                me.Update(timeElapsed);
+                me.Update((float)gameTime.ElapsedGameTime.TotalMilliseconds/20);
             }
+
             base.Update(gameTime);
         }
 
@@ -102,9 +98,8 @@ namespace MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(transformMatrix: camera.Transform);
-            // TODO: Add your drawing code here
-            //world.Render(spriteBatch);
+            //spriteBatch.Begin(transformMatrix: camera.Transform);
+            spriteBatch.Begin();
             spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
             RenderWorld(spriteBatch);
 
@@ -131,11 +126,14 @@ namespace MonoGame
             Vehicle v = new Vehicle(new Vector2D(200, 200), this, graphics);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
+            v.LoadTexture(Content);
             entities.Add(v);
 
-            //Vehicle vg = new Vehicle(new Vector2D(60, 60), this);
-            //vg.VColor = Color.Green;
-            //entities.Add(vg);
+            Vehicle vg = new Vehicle(new Vector2D(60, 60), this, graphics);
+            vg.VColor = Color.Green;
+            vg.SB = new FleeBehaviour(v);
+            vg.LoadTexture(Content);
+            entities.Add(vg);
         }
 
         public void RenderWorld(SpriteBatch s)
