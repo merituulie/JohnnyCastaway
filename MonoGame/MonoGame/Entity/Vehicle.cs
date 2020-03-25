@@ -15,7 +15,6 @@ namespace MonoGame
             Velocity = new Vector2D(0, 0);
             Scale = 5;
 
-            VColor = Color.Black;
             texture = new Texture2D(g.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
         }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MonoGame.Entity
 {
-    class StaticGameEntity : BaseGameEntity
+    public class StaticGameEntity : BaseGameEntity
     {
         public int TextureWidth { get; set; }
         public int TextureHeight { get; set; }

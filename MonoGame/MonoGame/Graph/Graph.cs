@@ -3,8 +3,8 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
-//using MonoGame.Extended.Tiled;
-//using MonoGame.Extended.Tiled.Graphics;
+using MonoGame.Extended.Tiled;
+using MonoGame.Extended;
 
 namespace MonoGame.Graph
 {
@@ -18,11 +18,11 @@ namespace MonoGame.Graph
             nodeMap = new Dictionary<Vector2, Node>();
 
             // Construct the nodes based on the map
-            for (int i = 0, y = 0; map.Height; y++)
+            for (int i = 0, y = 0; y < map.Height; y++)
             {
                 for (int x = 0; x < map.Width; x++, i++)
                 {
-                    if (map.TileLayers[0].Tiles[i].GlobalIdentifies == 8 && map.TileLayers[1].Tiles[i].GlobalIdentifier == 0)
+                    if (map.TileLayers[0].Tiles[i].GlobalIdentifier == 8 && map.TileLayers[1].Tiles[i].GlobalIdentifier == 0)
                     {
                         GetNode(new Vector2(x * 16 + 8, y * 16 + 8));
                     }
