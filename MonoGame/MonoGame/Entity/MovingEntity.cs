@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using MonoGame.Entity;
 using System;
 
 namespace MonoGame
@@ -11,10 +12,9 @@ namespace MonoGame
         public float Mass { get; set; }
         public float MaxSpeed { get; set; }
 
-
         public SteeringBehaviour SB { get; set; }
 
-        public MovingEntity(Vector2D pos, Game1 w, GraphicsDeviceManager g) : base(pos, w, g)
+        public MovingEntity(Vector2D pos, Game1 w, GraphicsDeviceManager g, EntityManager em) : base(pos, w, g, em)
         {
             Mass = 30;
             MaxSpeed = 150;

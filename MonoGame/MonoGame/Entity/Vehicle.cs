@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Entity;
 
 namespace MonoGame
 {
@@ -10,7 +11,7 @@ namespace MonoGame
 
         public Texture2D texture { get; set; }
 
-        public Vehicle(Vector2D pos, Game1 w, GraphicsDeviceManager g) : base(pos, w, g)
+        public Vehicle(Vector2D pos, Game1 w, GraphicsDeviceManager g, EntityManager em) : base(pos, w, g, em)
         {
             Velocity = new Vector2D(0, 0);
             Scale = 5;

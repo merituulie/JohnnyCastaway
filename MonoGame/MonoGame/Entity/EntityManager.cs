@@ -5,30 +5,30 @@ using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MonoGame.Entity.StaticEntities;
+//using MonoGame.Entity.StaticEntities;
 
 namespace MonoGame.Entity
 {
-    class EntityManager
+    public class EntityManager
     {
-        private List<StaticGameEntity> staticEntities = new List<StaticGameEntity>();
+       // private List<StaticGameEntity> staticEntities = new List<StaticGameEntity>();
 
         public Texture2D palmtreeTexture;
 
         public EntityManager()
         {
-            staticEntities.Add(new Palmtree(this, new Vector2D(100, 100), 50, 50));
+            //staticEntities.Add(new Palmtree(this, new Vector2D(100, 100), 50, 50));
         }
 
         public void LoadContent(ContentManager Content)
         {
-            palmtreeTexture = Content.Load<Texture2D>("Palmtree");
+            //palmtreeTexture = Content.Load<Texture2D>("Palmtree");
         }
 
         public void Draw(SpriteBatch sb)
         {
             sb.Begin();
-            staticEntities.ForEach(s => s.Draw(sb));
+            //staticEntities.ForEach(s => s.Render(sb));
             sb.End();
         }
 

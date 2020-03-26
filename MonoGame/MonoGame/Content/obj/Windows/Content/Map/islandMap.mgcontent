@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Merit/Documents/School/GameAIClone24.3/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx</SourceFile>
+  <SourceTime>2020-03-25T16:22:36.3299895+01:00</SourceTime>
+  <DestFile>C:/Users/Merit/Documents/School/GameAIClone24.3/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/islandMap.xnb</DestFile>
+  <DestTime>2020-03-26T13:10:37.427617+01:00</DestTime>
+  <Importer>TiledMapImporter</Importer>
+  <ImporterTime>2020-03-26T11:17:06.8894435+01:00</ImporterTime>
+  <Processor>TiledMapProcessor</Processor>
+  <ProcessorTime>2020-03-26T11:17:06.8894435+01:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
