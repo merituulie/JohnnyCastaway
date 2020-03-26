@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MonoGame.Entity;
+using MonoGame.Extended.Tiled;
+using MonoGame.Extended.Tiled.Graphics;
 using System;
 using System.Collections.Generic;
 
@@ -14,10 +17,16 @@ namespace MonoGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Camera camera;
+        private TiledMap map;
+        private TiledMapRenderer mapRenderer;
 
         public const float timeDelta = 0.8f;
 
         List<MovingEntity> entities = new List<MovingEntity>();
+
+        public EntityManager em = new EntityManager();
+
+        // public Graph navGraph;
         public Vehicle Target { get; set; }
         int Width { get; set; }
         int Height { get; set; }
@@ -41,7 +50,24 @@ namespace MonoGame
         protected override void Initialize()
         {
             this.IsMouseVisible = true;
+
             this.Window.AllowUserResizing = true;
+
+            //Load the compiled map
+            map = Content.Load<TiledMap>("Map/islandMap");
+
+            // Make sure the graphicsdevice 
+            GraphicsDevice.BlendState = BlendState.AlphaBlend;
+
+            // Create the map renderer
+            mapRenderer = new TiledMapRenderer(GraphicsDevice);
+
+            // Initialize the entity manager
+            em = new EntityManager();
+
+            // Generate the graph with the map and static entities
+            //graph = new Graph(map, entityManager.GetStaticEntities());
+
             base.Initialize();
         }
 
@@ -52,6 +78,8 @@ namespace MonoGame
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            em.LoadContent(Content);
             
         }
 
@@ -77,10 +105,12 @@ namespace MonoGame
             var mouseState = Mouse.GetState();
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                Target.Pos = new Vector2D(mouseState.X, mouseState.Y);
+                Target.Pos = new Vector2(mouseState.X, mouseState.Y);
             }
 
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
+
+            mapRenderer.Update(map, gameTime);
 
             foreach (MovingEntity me in entities)
             {
@@ -105,7 +135,6 @@ namespace MonoGame
 
             spriteBatch.End();
 
-
             base.Draw(gameTime);
         }
 
@@ -119,17 +148,17 @@ namespace MonoGame
         private void PopulateWorld()
         {
 
-            Target = new Vehicle(new Vector2D(100, 60), this, graphics);
+            Target = new Vehicle(new Vector2(100, 60), this, em);
             Target.VColor = Color.DarkRed;
-            Target.Pos = new Vector2D(100, 40);
+            Target.Pos = new Vector2(100, 40);
 
-            Vehicle v = new Vehicle(new Vector2D(200, 200), this, graphics);
+            Vehicle v = new Vehicle(new Vector2(200, 200), this, em);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
             v.LoadTexture(Content);
             entities.Add(v);
 
-            Vehicle vg = new Vehicle(new Vector2D(60, 60), this, graphics);
+            Vehicle vg = new Vehicle(new Vector2(60, 60), this, em);
             vg.VColor = Color.Green;
             vg.SB = new FleeBehaviour(v);
             vg.LoadTexture(Content);
@@ -138,13 +167,14 @@ namespace MonoGame
 
         public void RenderWorld(SpriteBatch s)
         {
+            mapRenderer.Draw(map);
             entities.ForEach(e => e.Render(s));
             Target.Render(s);
         }
 
-        public Vector2D WrapAround(Vector2D position)
+        public Vector2 WrapAround(Vector2 position)
         {
-            return new Vector2D((position.X + Width) % Width, (position.Y + Height) % Height);
+            return new Vector2((position.X + Width) % Width, (position.Y + Height) % Height);
         }
     }
 }

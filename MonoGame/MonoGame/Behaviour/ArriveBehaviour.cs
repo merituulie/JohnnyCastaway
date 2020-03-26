@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,29 +9,34 @@ namespace MonoGame
 {
     class ArriveBehaviour : SteeringBehaviour
     {
-        public ArriveBehaviour(MovingEntity me) : base(me)
-        {
+        Decelaration deceleration;
 
+        public ArriveBehaviour(MovingEntity me, Decelaration deceleration) : base(me)
+        {
+            this.deceleration = deceleration;
         }
-        public override Vector2D Calculate()
+        public override Vector2 Calculate()
         {
-            Vector2D targetpos = ME.MyWorld.Target.Pos;
-            if (targetpos == null)
-                return new Vector2D(0, 0);
+            Vector2 targetpos = ME.MyWorld.Target.Pos;
 
-            Vector2D toTarget = targetpos.Clone().Sub(ME.Pos);
-            double distance = toTarget.Length();
+            if (targetpos == null)
+                return new Vector2(0, 0);
+
+            Vector2 toTarget = Vector2.Subtract(targetpos, ME.Pos);
+            float distance = toTarget.Length();
 
             if (distance <= 0)
             {
-                return new Vector2D(0, 0);
+                return new Vector2(0, 0);
             }
 
-            double speed = distance / 0.3;
-            speed = Math.Min(speed, ME.MaxSpeed);
-            Vector2D desiredVelocity = toTarget.Multiply(speed).divide(distance);
+            const float decelerationTweaker = 0.3f;
 
-            return desiredVelocity.Sub(ME.Velocity);
+            float speed = distance / ((float)deceleration * decelerationTweaker);
+            speed = Math.Min(speed, ME.MaxSpeed);
+            Vector2 desiredVelocity = Vector2.Multiply(toTarget, speed / distance);
+
+            return Vector2.Subtract(desiredVelocity, ME.Velocity);
         }
     }
 }

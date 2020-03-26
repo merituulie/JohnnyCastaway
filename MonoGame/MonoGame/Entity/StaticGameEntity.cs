@@ -12,7 +12,7 @@ namespace MonoGame.Entity
         public int TextureWidth { get; set; }
         public int TextureHeight { get; set; }
 
-        public StaticGameEntity(EntityManager em, Vector2D position, int width, int height) : base(em, position)
+        public StaticGameEntity(Vector2D pos, Game1 w, EntityManager em, int width, int height) : base(pos, w, em)
         {
             TextureWidth = width;
             TextureHeight = height;

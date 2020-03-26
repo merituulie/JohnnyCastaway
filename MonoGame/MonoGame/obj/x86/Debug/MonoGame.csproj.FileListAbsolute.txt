@@ -21,3 +21,77 @@ D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
 D:\storage\AAI\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\preview_idle.xnb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\Attribution.txt
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\islandMap.xnb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\shipwreckstuff.xnb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\terrain.xnb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\preview_idle.xnb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.exe
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.pdb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.pdb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.pdb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.pdb
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
+C:\Users\Merit\Documents\School\GameAIClone24.3\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\Attribution.txt
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\islandMap.xnb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\shipwreckstuff.xnb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\terrain.xnb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\preview_idle.xnb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.exe
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.pdb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.pdb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.pdb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.pdb
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
+C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb

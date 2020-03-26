@@ -1,45 +1,46 @@
 ﻿using Microsoft.Xna.Framework;
+using MonoGame.Entity;
+using MonoGame.Extended;
 using System;
 
 namespace MonoGame
 {
     public abstract class MovingEntity : BaseGameEntity
     {
-        public Vector2D Velocity { get; set; }
-        public Vector2D Heading { get; set; }
-        public Vector2D Side { get; set; }
+        public Vector2 Velocity { get; set; }
+        public Vector2 Heading { get; set; }
+        public Vector2 Side { get; set; }
         public float Mass { get; set; }
         public float MaxSpeed { get; set; }
 
-
         public SteeringBehaviour SB { get; set; }
 
-        public MovingEntity(Vector2D pos, Game1 w, GraphicsDeviceManager g) : base(pos, w, g)
+        public MovingEntity(Vector2 pos, Game1 w, EntityManager em) : base(pos, w, em)
         {
             Mass = 30;
             MaxSpeed = 150;
-            Velocity = new Vector2D();
+            Velocity = new Vector2();
 
         }
 
         public override void Update(float timeElapsed)
         {
-            Vector2D SteeringForce = SB.Calculate();
+            Vector2 SteeringForce = SB.Calculate();
 
-            Vector2D acceleration = SteeringForce.divide(Mass);
+            Vector2 acceleration = Vector2.Divide(SteeringForce, Mass);
 
-            Velocity = Velocity.Add(acceleration.Multiply(timeElapsed));
+            Velocity += Vector2.Multiply(acceleration, timeElapsed);
 
-            Velocity.truncate(MaxSpeed);
+            Velocity = Velocity.Truncate(MaxSpeed);
 
-            Pos = Pos.Add(Velocity.Multiply(timeElapsed));
+            Pos += Vector2.Multiply(Velocity, timeElapsed);
+
             Pos = MyWorld.WrapAround(Pos);
 
             if (Velocity.LengthSquared() > 0.0000001)
             {
-                Vector2D heading = Velocity.Clone();
-                Heading = heading.Normalize();
-                Side = Heading.Perp();
+                Heading = Velocity.NormalizedCopy();
+                Side = Heading.PerpendicularClockwise();
             }
 
             Console.WriteLine(ToString());

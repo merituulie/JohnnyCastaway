@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,23 +13,24 @@ namespace MonoGame
         {
 
         }
-        public override Vector2D Calculate()
+        public override Vector2 Calculate()
         {
-            Vector2D targetpos = ME.MyWorld.Target.Pos;
-            if (targetpos == null)
-                return new Vector2D(0, 0);
+            Vector2 targetPos = ME.MyWorld.Target.Pos;
 
-            const double panicDistanceSquared = 100.0 * 100.0;
-            if ((Math.Pow(ME.Pos.X - targetpos.X, 2) + Math.Pow(ME.Pos.Y - targetpos.Y, 2)) > panicDistanceSquared)
+            if (targetPos == null)
+                return new Vector2(0, 0);
+
+            const float panicDistanceSquared = 100f * 100f;
+
+            if ((Math.Pow(ME.Pos.X - targetPos.X, 2) + Math.Pow(ME.Pos.Y - targetPos.Y, 2)) > panicDistanceSquared)
             {
-                return new Vector2D(0, 0);
+                return new Vector2(0, 0);
             }
 
-            Vector2D desiredVelocity = ME.Pos.Clone();
-            desiredVelocity.Sub(targetpos);
+            Vector2 desiredVelocity = Vector2.Subtract(ME.Pos, targetPos);
             desiredVelocity.Normalize();
-            desiredVelocity.Multiply(ME.MaxSpeed);
-            return desiredVelocity.Sub(ME.Velocity);
+            desiredVelocity = Vector2.Multiply(desiredVelocity, ME.MaxSpeed);
+            return Vector2.Subtract(desiredVelocity, ME.Velocity);
         }
     }
 }
