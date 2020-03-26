@@ -48,7 +48,7 @@
     <Compile Include="Entity\BaseGameEntity.cs" />
     <Compile Include="Entity\EntityManager.cs" />
     <Compile Include="Entity\MovingEntity.cs" />
-    <Compile Include="Entity\Vehicle.cs" />
+    <Compile Include="Entity\Survivor.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
