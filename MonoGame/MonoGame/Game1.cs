@@ -105,7 +105,7 @@ namespace MonoGame
             var mouseState = Mouse.GetState();
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                Target.Pos = new Vector2D(mouseState.X, mouseState.Y);
+                Target.Pos = new Vector2(mouseState.X, mouseState.Y);
             }
 
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
@@ -148,17 +148,17 @@ namespace MonoGame
         private void PopulateWorld()
         {
 
-            Target = new Vehicle(new Vector2D(100, 60), this, graphics, em);
+            Target = new Vehicle(new Vector2(100, 60), this, em);
             Target.VColor = Color.DarkRed;
-            Target.Pos = new Vector2D(100, 40);
+            Target.Pos = new Vector2(100, 40);
 
-            Vehicle v = new Vehicle(new Vector2D(200, 200), this, graphics, em);
+            Vehicle v = new Vehicle(new Vector2(200, 200), this, em);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
             v.LoadTexture(Content);
             entities.Add(v);
 
-            Vehicle vg = new Vehicle(new Vector2D(60, 60), this, graphics, em);
+            Vehicle vg = new Vehicle(new Vector2(60, 60), this, em);
             vg.VColor = Color.Green;
             vg.SB = new FleeBehaviour(v);
             vg.LoadTexture(Content);
@@ -172,9 +172,9 @@ namespace MonoGame
             Target.Render(s);
         }
 
-        public Vector2D WrapAround(Vector2D position)
+        public Vector2 WrapAround(Vector2 position)
         {
-            return new Vector2D((position.X + Width) % Width, (position.Y + Height) % Height);
+            return new Vector2((position.X + Width) % Width, (position.Y + Height) % Height);
         }
     }
 }

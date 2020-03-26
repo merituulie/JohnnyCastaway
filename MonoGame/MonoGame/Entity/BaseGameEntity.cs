@@ -6,7 +6,7 @@ namespace MonoGame
 {
     public abstract class BaseGameEntity
     {
-        public Vector2D Pos { get; set; }
+        public Vector2 Pos { get; set; }
         public float Scale { get; set; }
         public Game1 MyWorld { get; set; }
 
@@ -14,12 +14,12 @@ namespace MonoGame
 
         public Texture2D texture { get; set; }
 
-        public BaseGameEntity(Vector2D pos, Game1 w, GraphicsDeviceManager g, EntityManager em)
+        public BaseGameEntity(Vector2 pos, Game1 w, EntityManager em)
         {
             this.em = em;
             Pos = pos;
             MyWorld = w;
-            texture = new Texture2D(g.GraphicsDevice, 40, 40);
+            //texture = new Texture2D(g.GraphicsDevice, 40, 40);
         }
 
         public abstract void Update(float delta);
