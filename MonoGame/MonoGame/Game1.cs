@@ -150,6 +150,7 @@ namespace MonoGame
 
             Target = new Survivor(new Vector2(100, 60), em);
             Target.VColor = Color.DarkRed;
+            Target.LoadTexture(Content);
             Target.Pos = new Vector2(100, 40);
 
             //Survivor v = new Survivor(new Vector2(200, 200), em);

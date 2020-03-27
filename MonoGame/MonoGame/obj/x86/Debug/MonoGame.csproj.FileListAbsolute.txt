@@ -95,6 +95,7 @@ C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGa
 C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
 C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 C:\Users\Merit\Documents\School\GameAIClone26.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+<<<<<<< HEAD
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\Attribution.txt
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\islandMap.xnb
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\shipwreckstuff.xnb
@@ -134,3 +135,21 @@ C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGa
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+=======
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\Attribution.txt
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\coconut.xnb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\palmtree.xnb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\islandMap.xnb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\shipwreckstuff.xnb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Map\terrain.xnb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.dll
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.dll
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.dll
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Newtonsoft.Json.dll
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.pdb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.xml
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.pdb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Graphics.xml
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.pdb
+D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.xml
+>>>>>>> 3e5ecdd3737f8ef8b37d33eee70cd78b67f06308
