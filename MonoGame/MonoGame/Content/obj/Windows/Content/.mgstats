@@ -1,1 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/islandMap.xnb","TiledMapProcessor","TiledMapContent",14287,118575,0.647561
+"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/shipwreckstuff.xnb","TextureProcessor","Texture2DContent",18544,45685,0.3416127
+"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/terrain.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/terrain.xnb","TextureProcessor","Texture2DContent",171780,1978453,0.0923228
+"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/preview_idle.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/preview_idle.xnb","TextureProcessor","Texture2DContent",14310,213085,0.0308835

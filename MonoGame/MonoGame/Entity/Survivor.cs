@@ -15,8 +15,6 @@ namespace MonoGame
         {
             Velocity = new Vector2(0, 0f);
             Scale = 5;
-
-            texture = new Texture2D(g.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
         }
 
         public override void Render(SpriteBatch s)
