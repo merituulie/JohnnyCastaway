@@ -15,12 +15,11 @@ namespace MonoGame
 
         public SteeringBehaviour SB { get; set; }
 
-        public MovingEntity(Vector2 pos, Game1 w, EntityManager em) : base(pos, w, em)
+        public MovingEntity(Vector2 pos, EntityManager em) : base(pos, em)
         {
             Mass = 30;
             MaxSpeed = 150;
             Velocity = new Vector2();
-
         }
 
         public override void Update(float timeElapsed)
@@ -34,8 +33,6 @@ namespace MonoGame
             Velocity = Velocity.Truncate(MaxSpeed);
 
             Pos += Vector2.Multiply(Velocity, timeElapsed);
-
-            Pos = MyWorld.WrapAround(Pos);
 
             if (Velocity.LengthSquared() > 0.0000001)
             {

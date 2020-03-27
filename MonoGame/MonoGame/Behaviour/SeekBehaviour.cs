@@ -9,13 +9,12 @@ namespace MonoGame
 {
     class SeekBehaviour : SteeringBehaviour
     {
-        public SeekBehaviour(MovingEntity me) : base(me)
+        public SeekBehaviour(MovingEntity me, Vector2 target) : base(me, target)
         {
-
         }
         public override Vector2 Calculate()
         {
-            Vector2 targetpos = ME.MyWorld.Target.Pos;
+            Vector2 targetpos = Target;
 
             if (targetpos == null)
                 return new Vector2(0, 0);

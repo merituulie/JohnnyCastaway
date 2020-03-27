@@ -10,13 +10,13 @@ namespace MonoGame.Entity.StaticEntities
 {
     class Palmtree : StaticGameEntity
     {
-        public Palmtree(EntityManager em, Vector2D position, int width, int height) : base(em, position, width, height)
+        public Palmtree(Vector2 pos, EntityManager em, int width, int height) : base(pos, em, width, height)
         { 
         }
 
-        public override Draw(SpriteBatch sb)
+        public override void Update(float delta)
         {
-            sb.Draw(em.palmtreeTexture, Pos);
+            throw new NotImplementedException();
         }
     }
 }

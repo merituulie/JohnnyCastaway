@@ -148,21 +148,19 @@ namespace MonoGame
         private void PopulateWorld()
         {
 
-            Target = new Survivor(new Vector2(100, 60), this, em);
+            Target = new Survivor(new Vector2(100, 60), em);
             Target.VColor = Color.DarkRed;
             Target.Pos = new Vector2(100, 40);
 
-            Survivor v = new Survivor(new Vector2(200, 200), this, em);
-            v.VColor = Color.Blue;
-            v.SB = new SeekBehaviour(v);
-            v.LoadTexture(Content);
-            entities.Add(v);
+            //Survivor v = new Survivor(new Vector2(200, 200), em);
+            ////v.VColor = Color.Blue;
+            //v.SB = new SeekBehaviour(v);
+            //entities.Add(v);
 
-            Survivor vg = new Survivor(new Vector2(60, 60), this, em);
-            vg.VColor = Color.Green;
-            vg.SB = new FleeBehaviour(v);
-            vg.LoadTexture(Content);
-            entities.Add(vg);
+            //Survivor vg = new Survivor(new Vector2(60, 60), em);
+            //vg.VColor = Color.Green;
+            //vg.SB = new FleeBehaviour(v);
+            //entities.Add(vg);
         }
 
         public void RenderWorld(SpriteBatch s)

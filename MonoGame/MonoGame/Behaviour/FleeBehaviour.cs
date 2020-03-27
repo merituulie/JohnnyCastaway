@@ -9,13 +9,13 @@ namespace MonoGame
 {
     class FleeBehaviour : SteeringBehaviour
     {
-        public FleeBehaviour(MovingEntity me) : base(me)
+        public FleeBehaviour(MovingEntity me, Vector2 target) : base(me, target)
         {
 
         }
         public override Vector2 Calculate()
         {
-            Vector2 targetPos = ME.MyWorld.Target.Pos;
+            Vector2 targetPos = Target;
 
             if (targetPos == null)
                 return new Vector2(0, 0);

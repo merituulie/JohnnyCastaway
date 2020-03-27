@@ -11,13 +11,13 @@ namespace MonoGame
     {
         Decelaration deceleration;
 
-        public ArriveBehaviour(MovingEntity me, Decelaration deceleration) : base(me)
+        public ArriveBehaviour(MovingEntity me, Vector2 target, Decelaration deceleration) : base(me, target)
         {
             this.deceleration = deceleration;
         }
         public override Vector2 Calculate()
         {
-            Vector2 targetpos = ME.MyWorld.Target.Pos;
+            Vector2 targetpos = Target;
 
             if (targetpos == null)
                 return new Vector2(0, 0);
