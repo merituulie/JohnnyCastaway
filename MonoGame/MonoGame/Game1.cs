@@ -27,7 +27,7 @@ namespace MonoGame
         public EntityManager em = new EntityManager();
 
         // public Graph navGraph;
-        public Survivor Target { get; set; }
+        public Vector2 Target = new Vector2(100,100);
         int Width { get; set; }
         int Height { get; set; }
         
@@ -105,7 +105,7 @@ namespace MonoGame
             var mouseState = Mouse.GetState();
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
-                Target.Pos = new Vector2(mouseState.X, mouseState.Y);
+                Target = new Vector2(mouseState.X, mouseState.Y);
             }
 
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
@@ -148,10 +148,10 @@ namespace MonoGame
         private void PopulateWorld()
         {
 
-            Target = new Survivor(new Vector2(100, 60), em);
-            Target.VColor = Color.DarkRed;
-            //Target.LoadTexture(Content);
-            Target.Pos = new Vector2(100, 40);
+            //Target = new Survivor(new Vector2(100, 60), em);
+            //Target.VColor = Color.DarkRed;
+            ////Target.LoadTexture(Content);
+            //Target.Pos = new Vector2(100, 40);
 
             //Survivor v = new Survivor(new Vector2(200, 200), em);
             ////v.VColor = Color.Blue;
@@ -168,7 +168,7 @@ namespace MonoGame
         {
             mapRenderer.Draw(map);
             entities.ForEach(e => e.Render(s));
-            Target.Render(s);
+            //Target.Render(s);
         }
 
         public Vector2 WrapAround(Vector2 position)
