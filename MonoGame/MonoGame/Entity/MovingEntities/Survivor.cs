@@ -13,6 +13,8 @@ namespace MonoGame
         {
             Velocity = new Vector2(0, 0f);
             Scale = 5;
+
+            SB = new SeekBehaviour(this, pos);
         }
 
         public override void Render(SpriteBatch sb)
