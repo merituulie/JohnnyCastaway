@@ -124,11 +124,20 @@ namespace MonoGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             //spriteBatch.Begin(transformMatrix: camera.Transform);
+<<<<<<< HEAD
             //spriteBatch.Begin();
             //spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
             RenderWorld(spriteBatch);
             em.Draw(spriteBatch);
             //spriteBatch.End();
+=======
+            spriteBatch.Begin();
+            RenderWorld(spriteBatch);
+
+            em.Draw(spriteBatch);
+
+            spriteBatch.End();
+>>>>>>> 39bb850f692f96124ee31b2807ecc86539d502cc
 
             base.Draw(gameTime);
         }

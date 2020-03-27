@@ -23,10 +23,10 @@ namespace MonoGame
             double rightCorner = Pos.Y - Scale;
             double size = Scale * 2;
 
+            sb.Draw(em.survivorTexture, Pos, Color.White);
             sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
 
             base.Render(sb);
-            sb.Draw(em.survivorTexture, Pos, Color.White);
         }
     }
 }
