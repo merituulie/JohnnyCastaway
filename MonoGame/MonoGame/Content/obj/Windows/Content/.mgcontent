@@ -4,23 +4,18 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-<<<<<<< HEAD
     <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/coconut.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/Map/terrain.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/palmtree.png</File>
+    <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/Player.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/preview_idle.png</File>
-=======
-    <File>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/coconut.png</File>
-    <File>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx</File>
-    <File>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png</File>
-    <File>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/terrain.png</File>
-    <File>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/palmtree.png</File>
-    <File>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/preview_idle.png</File>
->>>>>>> 3e5ecdd3737f8ef8b37d33eee70cd78b67f06308
+    <File>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/Seagull.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

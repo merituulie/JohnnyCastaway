@@ -153,3 +153,5 @@ D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.pdb
 D:\storage\AAI\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\MonoGame.Extended.Tiled.xml
 >>>>>>> 3e5ecdd3737f8ef8b37d33eee70cd78b67f06308
+C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Player.xnb
+C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\Seagull.xnb

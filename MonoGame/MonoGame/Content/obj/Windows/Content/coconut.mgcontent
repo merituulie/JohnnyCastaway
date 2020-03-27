@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<<<<<<< HEAD
   <SourceFile>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/coconut.png</SourceFile>
   <SourceTime>2020-03-25T16:22:36.3349745+01:00</SourceTime>
   <DestFile>C:/Users/Merit/Documents/School/GameAIClone27.3 - Current/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/coconut.xnb</DestFile>
-  <DestTime>2020-03-27T15:23:13.2834542+01:00</DestTime>
-=======
-  <SourceFile>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/coconut.png</SourceFile>
-  <SourceTime>2020-03-25T09:26:16.7064572+01:00</SourceTime>
-  <DestFile>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/coconut.xnb</DestFile>
-  <DestTime>2020-03-26T18:01:06.7766488+01:00</DestTime>
->>>>>>> 3e5ecdd3737f8ef8b37d33eee70cd78b67f06308
+  <DestTime>2020-03-27T16:27:49.2306827+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
