@@ -38,3 +38,4 @@ C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGa
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+C:\Users\Merit\Documents\School\GameAIClone27.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csprojAssemblyReference.cache

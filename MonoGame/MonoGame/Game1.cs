@@ -22,8 +22,6 @@ namespace MonoGame
 
         public const float timeDelta = 0.8f;
 
-        List<MovingEntity> entities = new List<MovingEntity>();
-
         public EntityManager em = new EntityManager();
 
         // public Graph navGraph;
@@ -112,10 +110,7 @@ namespace MonoGame
 
             mapRenderer.Update(map, gameTime);
 
-            foreach (MovingEntity me in entities)
-            {
-                me.Update((float)gameTime.ElapsedGameTime.TotalMilliseconds/20);
-            }
+            em.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -129,11 +124,11 @@ namespace MonoGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             //spriteBatch.Begin(transformMatrix: camera.Transform);
-            spriteBatch.Begin();
-            spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
+            //spriteBatch.Begin();
+            //spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
             RenderWorld(spriteBatch);
-
-            spriteBatch.End();
+            em.Draw(spriteBatch);
+            //spriteBatch.End();
 
             base.Draw(gameTime);
         }
@@ -167,7 +162,7 @@ namespace MonoGame
         public void RenderWorld(SpriteBatch s)
         {
             mapRenderer.Draw(map);
-            entities.ForEach(e => e.Render(s));
+            //entities.ForEach(e => e.Render(s));
             //Target.Render(s);
         }
 
