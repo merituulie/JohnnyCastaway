@@ -85,6 +85,7 @@
     <Content Include="Content\Player.png" />
     <Content Include="Content\preview_idle.png" />
     <Content Include="Content\Seagull.png" />
+    <Content Include="Content\Tent.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
