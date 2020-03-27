@@ -31,7 +31,7 @@ namespace MonoGame.Entity
         {
             palmtreeTexture = Content.Load<Texture2D>("palmtree");
 
-            survivorTexture = Content.Load<Texture2D>("preview_idle");
+            survivorTexture = Content.Load<Texture2D>("Player");
         }
 
         public void Update(GameTime gt)
@@ -41,10 +41,10 @@ namespace MonoGame.Entity
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Begin();
+            //sb.Begin();
             staticEntities.ForEach(s => s.Render(sb));
             movingEntities.ForEach(m => m.Render(sb));
-            sb.End();
+            //sb.End();
         }
 
         // internal List<StaticGameEntity> GetStaticEntities() => staticEntities;

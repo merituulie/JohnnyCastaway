@@ -130,8 +130,9 @@ namespace MonoGame
 
             //spriteBatch.Begin(transformMatrix: camera.Transform);
             spriteBatch.Begin();
-            spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
             RenderWorld(spriteBatch);
+
+            em.Draw(spriteBatch);
 
             spriteBatch.End();
 

@@ -82,7 +82,9 @@
     <Content Include="Content\Map\shipwreckstuff.png" />
     <Content Include="Content\Map\terrain.png" />
     <Content Include="Content\palmtree.png" />
+    <Content Include="Content\Player.png" />
     <Content Include="Content\preview_idle.png" />
+    <Content Include="Content\Seagull.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
