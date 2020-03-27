@@ -27,7 +27,7 @@ namespace MonoGame
         public EntityManager em = new EntityManager();
 
         // public Graph navGraph;
-        public Vehicle Target { get; set; }
+        public Survivor Target { get; set; }
         int Width { get; set; }
         int Height { get; set; }
         
@@ -148,17 +148,17 @@ namespace MonoGame
         private void PopulateWorld()
         {
 
-            Target = new Vehicle(new Vector2(100, 60), this, em);
+            Target = new Survivor(new Vector2(100, 60), this, em);
             Target.VColor = Color.DarkRed;
             Target.Pos = new Vector2(100, 40);
 
-            Vehicle v = new Vehicle(new Vector2(200, 200), this, em);
+            Survivor v = new Survivor(new Vector2(200, 200), this, em);
             v.VColor = Color.Blue;
             v.SB = new SeekBehaviour(v);
             v.LoadTexture(Content);
             entities.Add(v);
 
-            Vehicle vg = new Vehicle(new Vector2(60, 60), this, em);
+            Survivor vg = new Survivor(new Vector2(60, 60), this, em);
             vg.VColor = Color.Green;
             vg.SB = new FleeBehaviour(v);
             vg.LoadTexture(Content);
