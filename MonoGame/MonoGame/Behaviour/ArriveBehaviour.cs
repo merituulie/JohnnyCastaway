@@ -10,10 +10,12 @@ namespace MonoGame
     class ArriveBehaviour : SteeringBehaviour
     {
         Decelaration deceleration;
+        private Vector2 Target;
 
-        public ArriveBehaviour(MovingEntity me, Vector2 target, Decelaration deceleration) : base(me, target)
+        public ArriveBehaviour(MovingEntity me, Vector2 target, Decelaration deceleration) : base(me)
         {
             this.deceleration = deceleration;
+            Target = target;
         }
         public override Vector2 Calculate()
         {

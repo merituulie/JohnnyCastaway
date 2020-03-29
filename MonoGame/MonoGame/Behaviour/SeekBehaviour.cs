@@ -9,8 +9,10 @@ namespace MonoGame
 {
     class SeekBehaviour : SteeringBehaviour
     {
-        public SeekBehaviour(MovingEntity me, Vector2 target) : base(me, target)
+        private Vector2 Target;
+        public SeekBehaviour(MovingEntity me, Vector2 target) : base(me)
         {
+            Target = target;
         }
         public override Vector2 Calculate()
         {

@@ -22,9 +22,13 @@ namespace MonoGame.Entity
 
         public EntityManager()
         {
-            staticEntities.Add(new Palmtree(new Vector2(100, 100), this, 50, 50));
+            staticEntities.Add(new Palmtree(new Vector2(730, 290), this, 50, 50));
+            staticEntities.Add(new Palmtree(new Vector2(710, 310), this, 50, 50));
+            staticEntities.Add(new Palmtree(new Vector2(650, 220), this, 50, 50));
 
-            movingEntities.Add(new Survivor(new Vector2(80, 80), this));
+            Survivor survivor = new Survivor(new Vector2(500, 500), this);
+            survivor.SB = new SeekBehaviour(survivor, survivor.Pos);
+            movingEntities.Add(survivor);
         }
 
         public void LoadContent(ContentManager Content)
@@ -41,12 +45,10 @@ namespace MonoGame.Entity
 
         public void Draw(SpriteBatch sb)
         {
-            //sb.Begin();
-            staticEntities.ForEach(s => s.Render(sb));
-            movingEntities.ForEach(m => m.Render(sb));
-            //sb.End();
+            sb.Begin();
+            staticEntities.ForEach(s => s.Draw(sb));
+            movingEntities.ForEach(m => m.Draw(sb));
+            sb.End();
         }
-
-        // internal List<StaticGameEntity> GetStaticEntities() => staticEntities;
     }
 }

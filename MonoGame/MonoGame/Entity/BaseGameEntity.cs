@@ -20,7 +20,7 @@ namespace MonoGame
 
         public abstract void Update(float delta);
 
-        public virtual void Render(SpriteBatch s)
+        public virtual void Draw(SpriteBatch s)
         {
             s.DrawCircle(Pos, 5f, 64, Color.Red);
         }
