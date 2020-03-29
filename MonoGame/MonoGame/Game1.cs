@@ -123,21 +123,11 @@ namespace MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            //spriteBatch.Begin(transformMatrix: camera.Transform);
-<<<<<<< HEAD
-            //spriteBatch.Begin();
-            //spriteBatch.DrawLine(new Vector2(0, 0), new Vector2(100, 100), Color.Black, thickness: 10);
-            RenderWorld(spriteBatch);
-            em.Draw(spriteBatch);
-            //spriteBatch.End();
-=======
             spriteBatch.Begin();
+
             RenderWorld(spriteBatch);
-
             em.Draw(spriteBatch);
-
             spriteBatch.End();
->>>>>>> 39bb850f692f96124ee31b2807ecc86539d502cc
 
             base.Draw(gameTime);
         }
@@ -146,33 +136,11 @@ namespace MonoGame
         {
             Width = w;
             Height = h;
-            PopulateWorld();
-        }
-
-        private void PopulateWorld()
-        {
-
-            //Target = new Survivor(new Vector2(100, 60), em);
-            //Target.VColor = Color.DarkRed;
-            ////Target.LoadTexture(Content);
-            //Target.Pos = new Vector2(100, 40);
-
-            //Survivor v = new Survivor(new Vector2(200, 200), em);
-            ////v.VColor = Color.Blue;
-            //v.SB = new SeekBehaviour(v);
-            //entities.Add(v);
-
-            //Survivor vg = new Survivor(new Vector2(60, 60), em);
-            //vg.VColor = Color.Green;
-            //vg.SB = new FleeBehaviour(v);
-            //entities.Add(vg);
         }
 
         public void RenderWorld(SpriteBatch s)
         {
             mapRenderer.Draw(map);
-            //entities.ForEach(e => e.Render(s));
-            //Target.Render(s);
         }
 
         public Vector2 WrapAround(Vector2 position)
