@@ -14,19 +14,18 @@ namespace MonoGame
             Velocity = new Vector2(0, 0f);
             Scale = 5;
 
-            SB = new SeekBehaviour(this, pos);
+            //SB = new SeekBehaviour(this, pos);
         }
 
-        public override void Render(SpriteBatch sb)
+        public override void Draw(SpriteBatch sb)
         {
-            double leftCorner = Pos.X - Scale;
-            double rightCorner = Pos.Y - Scale;
-            double size = Scale * 2;
+            //double leftCorner = Pos.X - Scale;
+            //double rightCorner = Pos.Y - Scale;
+            //double size = Scale * 2;
 
-            base.Render(sb);
-            sb.Draw(em.survivorTexture, Pos, Color.White);
-            sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
-
+            base.Draw(sb);
+            sb.Draw(em.survivorTexture, Pos);
+            //sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
         }
     }
 }

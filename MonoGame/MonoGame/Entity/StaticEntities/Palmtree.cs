@@ -14,9 +14,9 @@ namespace MonoGame.Entity.StaticEntities
         { 
         }
 
-        public override void Update(float delta)
+        public override void Draw(SpriteBatch sb)
         {
-            throw new NotImplementedException();
+            sb.Draw(em.palmtreeTexture, Pos);
         }
     }
 }

@@ -123,11 +123,8 @@ namespace MonoGame
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-
-            RenderWorld(spriteBatch);
+            RenderWorld();
             em.Draw(spriteBatch);
-            spriteBatch.End();
 
             base.Draw(gameTime);
         }
@@ -138,7 +135,7 @@ namespace MonoGame
             Height = h;
         }
 
-        public void RenderWorld(SpriteBatch s)
+        public void RenderWorld()
         {
             mapRenderer.Draw(map);
         }
