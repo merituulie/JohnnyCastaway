@@ -12,8 +12,6 @@ namespace MonoGame
 
         public readonly EntityManager em;
 
-        public Texture2D texture { get; set; }
-
         public BaseGameEntity(Vector2 pos, EntityManager em)
         {
             this.em = em;
