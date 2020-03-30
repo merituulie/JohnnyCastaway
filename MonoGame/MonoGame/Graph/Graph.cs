@@ -22,12 +22,25 @@ namespace MonoGame.Graph
             {
                 for (int x = 0; x < map.Width; x++, i++)
                 {
-                    if (map.TileLayers[0].Tiles[i].GlobalIdentifier == 8 && map.TileLayers[1].Tiles[i].GlobalIdentifier == 0)
+                    if (map.TileLayers[2].Tiles[i].GlobalIdentifier == 317 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 296
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 297 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 295
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 316 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 338
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 337 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 339
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 211 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 129
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 171 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 274
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 191 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 190
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 212 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 213
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 253 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 128
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 339 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 254
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 275 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 317
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 276 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 296
+                        || map.TileLayers[2].Tiles[i].GlobalIdentifier == 255 || map.TileLayers[2].Tiles[i].GlobalIdentifier == 318 
+                        || map.TileLayers[3].Tiles[i].GlobalIdentifier != 0)
                     {
-                        GetNode(new Vector2(x * 16 + 8, y * 16 + 8));
+                        GetNode(new Vector2(x * 32 + 16, y * 32 + 16));
                     }
                 }
-            } // Left here
+            }
 
             // Remove nodes near entities
             foreach (StaticGameEntity e in staticGameEntities) // StaticGameEntity
@@ -40,11 +53,11 @@ namespace MonoGame.Graph
                 int height = e.TextureHeight;
                 int width = e.TextureWidth;
 
-                for (int i = x; i < (x + height); i += 16)
+                for (int i = x; i < (x + height); i += 32)
                 {
-                    for (int j = y; j < (y + width); j += 16)
+                    for (int j = y; j < (y + width); j += 32)
                     {
-                        Vector2D v = new Vector2D(i, j);
+                        Vector2 v = new Vector2(i, j);
 
                         if (nodeMap.ContainsKey(v))
                         {
@@ -57,10 +70,10 @@ namespace MonoGame.Graph
             foreach (Node node in nodeMap.Values)
             {
                 Vector2 coordinate = node.coordinate;
-                Vector2 right = new Vector2(coordinate.X + 16F, coordinate.Y);
-                Vector2 rightUp = new Vector2(coordinate.X + 16F, coordinate.Y - 16F);
-                Vector2 rightDown = new Vector2(coordinate.X + 16F, coordinate.Y + 16F);
-                Vector2 down = new Vector2(coordinate.X, coordinate.Y + 16F);
+                Vector2 right = new Vector2(coordinate.X + 32F, coordinate.Y);
+                Vector2 rightUp = new Vector2(coordinate.X + 32F, coordinate.Y - 32F);
+                Vector2 rightDown = new Vector2(coordinate.X + 32F, coordinate.Y + 32F);
+                Vector2 down = new Vector2(coordinate.X, coordinate.Y + 32F);
 
                 if (nodeMap.ContainsKey(right))
                     AddEdge(coordinate, right, 1); // AddEdge
@@ -89,9 +102,9 @@ namespace MonoGame.Graph
             }
         }
 
-        public Vector2D GetNearestNode(Vector2 position)
+        public Vector2 GetNearestNode(Vector2 position)
         {
-            return new Vector2(((int)position.X) / 16 * 16 + 8, ((int)position.Y) / 16 * 16 + 8);
+            return new Vector2(((int)position.X) / 32 * 32 + 16, ((int)position.Y) / 32 * 32 + 16);
         }
 
         public void AddEdge(Vector2 sourceNode, Vector2 destinationNode, double cost)
@@ -111,7 +124,7 @@ namespace MonoGame.Graph
             }
         }
 
-        public LinkedList<Node> AStar(Vector2D startPoint, Vector2D destinationPoint)
+        public LinkedList<Node> AStar(Vector2 startPoint, Vector2 destinationPoint)
         {
             ClearAll();
 
@@ -203,7 +216,7 @@ namespace MonoGame.Graph
                     else if (edge.toNode.scratch != 0)
                         sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Yellow);
                     else
-                        sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Green);
+                        sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Red);
                 }
             }
 
@@ -214,7 +227,7 @@ namespace MonoGame.Graph
                 else if (node.scratch != 0)
                     sb.DrawCircle(node.coordinate, 2F, 12, Color.Yellow, 3F);
                 else
-                    sb.DrawCircle(node.coordinate, 2F, 12, Color.Green, 3F);
+                    sb.DrawCircle(node.coordinate, 2F, 12, Color.Red, 3F);
             }
 
             sb.End();

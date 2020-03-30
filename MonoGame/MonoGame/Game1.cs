@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Entity;
+using MonoGame.Graph;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Graphics;
 using System;
@@ -24,8 +25,11 @@ namespace MonoGame
 
         public EntityManager em = new EntityManager();
 
-        // public Graph navGraph;
+        public Graph.Graph navGraph;
+        public bool showGraph = false;
+
         public Vector2 Target = new Vector2(500,500);
+
         int Width { get; set; }
         int Height { get; set; }
         
@@ -67,7 +71,7 @@ namespace MonoGame
             em = new EntityManager();
 
             // Generate the graph with the map and static entities
-            //graph = new Graph(map, entityManager.GetStaticEntities());
+            navGraph = new Graph.Graph(map, em.GetStaticEntities());
 
             base.Initialize();
         }
@@ -81,7 +85,6 @@ namespace MonoGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             em.LoadContent(Content);
-            
         }
 
         /// <summary>
@@ -109,6 +112,9 @@ namespace MonoGame
                 Target = new Vector2(mouseState.X, mouseState.Y);
             }
 
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.G))
+                showGraph = true;
+
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 
             mapRenderer.Update(map, gameTime);
@@ -127,6 +133,10 @@ namespace MonoGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             RenderWorld();
+
+            if (showGraph)
+                navGraph.Draw(spriteBatch);
+
             em.Draw(spriteBatch);
 
             base.Draw(gameTime);

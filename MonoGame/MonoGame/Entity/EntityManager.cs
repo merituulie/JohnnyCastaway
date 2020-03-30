@@ -56,5 +56,10 @@ namespace MonoGame.Entity
             movingEntities.ForEach(survivor => survivor.Draw(sb));
             sb.End();
         }
+
+        public List<StaticGameEntity> GetStaticEntities()
+        {
+            return staticEntities;
+        }
     }
 }
