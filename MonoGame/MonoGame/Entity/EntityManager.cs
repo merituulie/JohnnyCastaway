@@ -13,7 +13,7 @@ namespace MonoGame.Entity
     public class EntityManager
     {
         private List<StaticGameEntity> staticEntities = new List<StaticGameEntity>();
-        private List<MovingEntity> movingEntities = new List<MovingEntity>();
+        private List<Survivor> movingEntities = new List<Survivor>();
 
         public Texture2D palmtreeTexture;
         public Texture2D survivorTexture;
@@ -27,7 +27,6 @@ namespace MonoGame.Entity
             staticEntities.Add(new Palmtree(new Vector2(650, 220), this, 50, 50));
 
             Survivor survivor = new Survivor(new Vector2(500, 500), this);
-            survivor.SB = new SeekBehaviour(survivor, survivor.Pos);
             movingEntities.Add(survivor);
         }
 
@@ -47,7 +46,7 @@ namespace MonoGame.Entity
         {
             sb.Begin();
             staticEntities.ForEach(s => s.Draw(sb));
-            movingEntities.ForEach(m => m.Draw(sb));
+            movingEntities.ForEach(survivor => survivor.Draw(sb));
             sb.End();
         }
     }
