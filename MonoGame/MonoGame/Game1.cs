@@ -32,10 +32,13 @@ namespace MonoGame
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1010;
+            graphics.PreferredBackBufferHeight = 960;
+            graphics.ApplyChanges();
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
             camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
-            InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+            //InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
             
         }
 
