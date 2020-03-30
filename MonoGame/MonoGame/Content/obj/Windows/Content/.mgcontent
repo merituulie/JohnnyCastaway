@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/bush.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/coconut.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png</File>
@@ -15,6 +16,7 @@
     <File>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/Tent.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

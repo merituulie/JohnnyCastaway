@@ -80,3 +80,4 @@ C:\Users\Merit\Documents\School\GameAIClone29.3 - Current\GameAI\MonoGame\MonoGa
 C:\Users\Merit\Documents\School\GameAIClone29.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
 C:\Users\Merit\Documents\School\GameAIClone29.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 C:\Users\Merit\Documents\School\GameAIClone29.3 - Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+C:\Users\Merit\Documents\School\GameAIClone29.3 - Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\bush.xnb

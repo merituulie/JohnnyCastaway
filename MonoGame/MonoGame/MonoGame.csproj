@@ -49,7 +49,9 @@
     <Compile Include="Entity\EntityManager.cs" />
     <Compile Include="Entity\MovingEntity.cs" />
     <Compile Include="Entity\MovingEntities\Survivor.cs" />
+    <Compile Include="Entity\StaticEntities\Bush.cs" />
     <Compile Include="Entity\StaticEntities\Palmtree.cs" />
+    <Compile Include="Entity\StaticEntities\Tent.cs" />
     <Compile Include="Entity\StaticGameEntity.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
@@ -77,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bush.png" />
     <Content Include="Content\coconut.png" />
     <Content Include="Content\Map\Attribution.txt" />
     <Content Include="Content\Map\shipwreckstuff.png" />
