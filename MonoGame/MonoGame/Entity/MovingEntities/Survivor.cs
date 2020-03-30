@@ -13,8 +13,9 @@ namespace MonoGame
         {
             Velocity = new Vector2(0, 0f);
             Scale = 5;
+            VColor = Color.Black;
 
-            //SB = new SeekBehaviour(this, pos);
+            SB = new SeekBehaviour(this, pos);
         }
 
         public override void Draw(SpriteBatch sb)
@@ -23,9 +24,9 @@ namespace MonoGame
             //double rightCorner = Pos.Y - Scale;
             //double size = Scale * 2;
 
-            base.Draw(sb);
+            //base.Draw(sb);
             sb.Draw(em.survivorTexture, Pos);
-            //sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
+            sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
         }
     }
 }

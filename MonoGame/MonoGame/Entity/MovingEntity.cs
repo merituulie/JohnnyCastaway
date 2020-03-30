@@ -19,7 +19,7 @@ namespace MonoGame
         {
             Mass = 30;
             MaxSpeed = 150;
-            Velocity = new Vector2();
+            Velocity = new Vector2(0f, 0f);
         }
 
         public override void Update(float timeElapsed)

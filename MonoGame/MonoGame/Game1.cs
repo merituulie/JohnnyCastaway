@@ -25,7 +25,7 @@ namespace MonoGame
         public EntityManager em = new EntityManager();
 
         // public Graph navGraph;
-        public Vector2 Target = new Vector2(100,100);
+        public Vector2 Target = new Vector2(500,500);
         int Width { get; set; }
         int Height { get; set; }
         
