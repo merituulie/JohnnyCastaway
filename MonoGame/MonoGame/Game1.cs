@@ -34,6 +34,7 @@ namespace MonoGame
         public bool showGraph = false;
 
         public Vector2 Target = new Vector2(100,100);
+        private SteeringBehaviour.Decelaration normal;
 
         int Width { get; set; }
         int Height { get; set; }
@@ -50,11 +51,6 @@ namespace MonoGame
             Content.RootDirectory = "Content";
             camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
             //InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
-        }
-
-        public Game1 Instance()
-        {
-            return this;
         }
 
         /// <summary>
@@ -122,6 +118,8 @@ namespace MonoGame
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 Target = new Vector2(mouseState.X, mouseState.Y);
+                Survivor survivor = em.GetSurvivor();
+                survivor.SB = new SeekBehaviour(survivor, Target);
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.G) && !previousState.IsKeyDown(Keys.G))

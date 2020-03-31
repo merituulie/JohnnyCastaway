@@ -61,5 +61,10 @@ namespace MonoGame.Entity
         {
             return staticEntities;
         }
+
+        public Survivor GetSurvivor()
+        {
+            return movingEntities[0];
+        }
     }
 }
