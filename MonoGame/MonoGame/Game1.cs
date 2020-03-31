@@ -15,7 +15,8 @@ namespace MonoGame
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
-    {
+    { 
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Camera camera;
@@ -36,6 +37,7 @@ namespace MonoGame
 
         int Width { get; set; }
         int Height { get; set; }
+
         
         public Game1()
         {
@@ -44,10 +46,15 @@ namespace MonoGame
             graphics.PreferredBackBufferHeight = 960;
             graphics.ApplyChanges();
             graphics.ApplyChanges();
+
             Content.RootDirectory = "Content";
             camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
             //InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
-            
+        }
+
+        public Game1 Instance()
+        {
+            return this;
         }
 
         /// <summary>
@@ -167,16 +174,15 @@ namespace MonoGame
             return new Vector2((position.X + Width) % Width, (position.Y + Height) % Height);
         }
 
-        public Vector2 GetTarget()
-        {
-            return Target;
-        }
-
         public void DrawTarget()
         {
             spriteBatch.Begin();
             spriteBatch.DrawCircle(Target, 5F, 12, Color.Red, 2F);
             spriteBatch.End();
+        }
+        public Vector2 GetTarget()
+        {
+            return Target;
         }
     }
 }

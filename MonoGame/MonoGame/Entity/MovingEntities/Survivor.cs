@@ -9,13 +9,20 @@ namespace MonoGame
     {
         public Color VColor { get; set; }
 
+        public Vector2 target;
+
         public Survivor(Vector2 pos, EntityManager em) : base(pos, em)
         {
             Velocity = new Vector2(0, 0f);
             Scale = 5;
             VColor = Color.Black;
 
-            SB = new SeekBehaviour(this, pos);
+            target = Game1.Instance().GetTarget();
+
+            if (target.X != 100 && target.Y != 100)
+                SB = new SeekBehaviour(this, target);
+            else
+                SB = new SeekBehaviour(this, pos);
         }
 
         public override void Draw(SpriteBatch sb)

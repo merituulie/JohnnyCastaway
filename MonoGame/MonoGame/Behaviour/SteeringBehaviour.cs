@@ -12,6 +12,8 @@ namespace MonoGame
         public MovingEntity ME { get; set; }
         public abstract Vector2 Calculate();
 
+
+
         public enum Decelaration { Slow = 3, Normal = 2, Fast = 1 }
 
         public SteeringBehaviour(MovingEntity me)
