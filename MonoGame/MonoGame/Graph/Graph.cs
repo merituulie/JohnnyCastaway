@@ -216,7 +216,7 @@ namespace MonoGame.Graph
                     else if (edge.toNode.scratch != 0)
                         sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Yellow);
                     else
-                        sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Red);
+                        sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.DimGray);
                 }
             }
 
@@ -227,7 +227,7 @@ namespace MonoGame.Graph
                 else if (node.scratch != 0)
                     sb.DrawCircle(node.coordinate, 2F, 12, Color.Yellow, 3F);
                 else
-                    sb.DrawCircle(node.coordinate, 2F, 12, Color.Red, 3F);
+                    sb.DrawCircle(node.coordinate, 2F, 12, Color.DimGray, 3F);
             }
 
             sb.End();

@@ -7,6 +7,7 @@ using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Graphics;
 using System;
 using System.Collections.Generic;
+using MonoGame.Extended;
 
 namespace MonoGame
 {
@@ -18,6 +19,9 @@ namespace MonoGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Camera camera;
+
+        private KeyboardState previousState = Keyboard.GetState();
+
         private TiledMap map;
         private TiledMapRenderer mapRenderer;
 
@@ -28,7 +32,7 @@ namespace MonoGame
         public Graph.Graph navGraph;
         public bool showGraph = false;
 
-        public Vector2 Target = new Vector2(500,500);
+        public Vector2 Target = new Vector2(100,100);
 
         int Width { get; set; }
         int Height { get; set; }
@@ -107,19 +111,22 @@ namespace MonoGame
                 Exit();
 
             var mouseState = Mouse.GetState();
+
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 Target = new Vector2(mouseState.X, mouseState.Y);
             }
 
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.G))
-                showGraph = true;
+            if (Keyboard.GetState().IsKeyDown(Keys.G) && !previousState.IsKeyDown(Keys.G))
+                showGraph = !showGraph;
 
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 
             mapRenderer.Update(map, gameTime);
 
             em.Update(gameTime);
+
+            previousState = Keyboard.GetState();
 
             base.Update(gameTime);
         }
@@ -136,6 +143,8 @@ namespace MonoGame
 
             if (showGraph)
                 navGraph.Draw(spriteBatch);
+
+            this.DrawTarget();
 
             em.Draw(spriteBatch);
 
@@ -156,6 +165,18 @@ namespace MonoGame
         public Vector2 WrapAround(Vector2 position)
         {
             return new Vector2((position.X + Width) % Width, (position.Y + Height) % Height);
+        }
+
+        public Vector2 GetTarget()
+        {
+            return Target;
+        }
+
+        public void DrawTarget()
+        {
+            spriteBatch.Begin();
+            spriteBatch.DrawCircle(Target, 5F, 12, Color.Red, 2F);
+            spriteBatch.End();
         }
     }
 }
