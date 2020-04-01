@@ -33,6 +33,7 @@ namespace MonoGame
             Velocity = Velocity.Truncate(MaxSpeed);
 
             Pos += Vector2.Multiply(Velocity, timeElapsed);
+            Pos = Game1.Instance.WrapAround(Pos);
 
             if (Velocity.LengthSquared() > 0.0000001)
             {

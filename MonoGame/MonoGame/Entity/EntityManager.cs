@@ -119,7 +119,7 @@ namespace MonoGame.Entity
 
         public Survivor GetSurvivor()
         {
-            return movingEntities[0];
+            return (Survivor)movingEntities[0];
         }
     }
 }

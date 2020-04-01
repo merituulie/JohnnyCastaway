@@ -15,8 +15,8 @@ namespace MonoGame
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
-    { 
-
+    {
+        private static Game1 instance = new Game1();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Camera camera;
@@ -36,8 +36,8 @@ namespace MonoGame
         public Vector2 Target = new Vector2(100,100);
         private SteeringBehaviour.Decelaration normal;
 
-        int Width { get; set; }
-        int Height { get; set; }
+        private int Width { get; set; }
+        private int Height { get; set; }
 
         
         public Game1()
@@ -46,13 +46,14 @@ namespace MonoGame
             graphics.PreferredBackBufferWidth = 1010;
             graphics.PreferredBackBufferHeight = 960;
             graphics.ApplyChanges();
-            graphics.ApplyChanges();
 
             Content.RootDirectory = "Content";
-            camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
-            //InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+
+            //camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
+            InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
         }
 
+        public static Game1 Instance => instance;
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -119,13 +120,13 @@ namespace MonoGame
             {
                 Target = new Vector2(mouseState.X, mouseState.Y);
                 Survivor survivor = em.GetSurvivor();
-                survivor.SB = new SeekBehaviour(survivor, Target);
+                survivor.SB.Target = Target;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.G) && !previousState.IsKeyDown(Keys.G))
                 showGraph = !showGraph;
 
-            camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
+            //camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 
             mapRenderer.Update(map, gameTime);
 

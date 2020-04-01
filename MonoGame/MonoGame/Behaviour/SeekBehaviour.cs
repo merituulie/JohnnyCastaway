@@ -9,7 +9,7 @@ namespace MonoGame
 {
     class SeekBehaviour : SteeringBehaviour
     {
-
+        private Vector2 desiredVelocity;
         public SeekBehaviour(MovingEntity me, Vector2 target) : base(me, target)
         {
         }
@@ -20,9 +20,9 @@ namespace MonoGame
             if (targetpos == null)
                 return new Vector2(0, 0);
 
-            Vector2 desiredVelocity = Vector2.Subtract(targetpos, ME.Pos);
+            desiredVelocity = Vector2.Subtract(targetpos, ME.Pos);
 
-            if (desiredVelocity.X > 0 || desiredVelocity.Y > 0)
+            if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)
             {
                 desiredVelocity.Normalize();
                 desiredVelocity = Vector2.Multiply(desiredVelocity, ME.MaxSpeed);

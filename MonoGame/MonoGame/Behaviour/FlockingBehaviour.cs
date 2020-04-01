@@ -19,11 +19,11 @@ namespace MonoGame
 
         public FlockingBehaviour(MovingEntity me) : base(me)
         {
-            maxSteeringForce = 50.0F;
+            maxSteeringForce = 10.0F;
             separationAmount = 4.0F;
             cohesionAmount = 1.0F;
             alignmentAmount = 5.0F;
-            wanderAmount = 1.0F;
+            wanderAmount = 5.0F;
         }
 
         public override Vector2 Calculate()
