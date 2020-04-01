@@ -21,5 +21,11 @@ namespace MonoGame
             ME = me;
             Target = target;
         }
+
+        public SteeringBehaviour(MovingEntity me)
+        {
+            ME = me;
+            Target = new Vector2(200,200);
+        }
     }
 }
