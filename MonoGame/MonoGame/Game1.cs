@@ -34,7 +34,7 @@ namespace MonoGame
         public bool showGraph = false;
 
         public Vector2 Target = new Vector2(100,100);
-        private SteeringBehaviour.Decelaration normal;
+        public enum Decelaration { Slow = 3, Normal = 2, Fast = 1 };
 
         int Width { get; set; }
         int Height { get; set; }
