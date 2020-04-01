@@ -18,7 +18,7 @@ namespace MonoGame
         public MovingEntity(Vector2 pos, EntityManager em) : base(pos, em)
         {
             Mass = 30;
-            MaxSpeed = 150;
+            MaxSpeed = 300;
             Velocity = new Vector2(0f, 0f);
         }
 

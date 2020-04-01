@@ -28,5 +28,10 @@ namespace MonoGame
             sb.Draw(em.survivorTexture, Pos);
             sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
         }
+
+        public SteeringBehaviour GetSurvivorBehaviour()
+        {
+            return SB;
+        }
     }
 }

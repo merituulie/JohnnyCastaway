@@ -12,10 +12,9 @@ namespace MonoGame
         Decelaration deceleration;
         private Vector2 Target;
 
-        public ArriveBehaviour(MovingEntity me, Vector2 target, Decelaration deceleration) : base(me)
+        public ArriveBehaviour(MovingEntity me, Vector2 target, Decelaration deceleration) : base(me, target)
         {
             this.deceleration = deceleration;
-            Target = target;
         }
         public override Vector2 Calculate()
         {

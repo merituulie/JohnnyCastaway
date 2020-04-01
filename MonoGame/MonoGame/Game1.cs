@@ -2,10 +2,12 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Entity;
+using MonoGame.Graph;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Graphics;
 using System;
 using System.Collections.Generic;
+using MonoGame.Extended;
 
 namespace MonoGame
 {
@@ -13,10 +15,14 @@ namespace MonoGame
     /// This is the main type for your game.
     /// </summary>
     public class Game1 : Game
-    {
+    { 
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Camera camera;
+
+        private KeyboardState previousState = Keyboard.GetState();
+
         private TiledMap map;
         private TiledMapRenderer mapRenderer;
 
@@ -24,10 +30,15 @@ namespace MonoGame
 
         public EntityManager em = new EntityManager();
 
-        // public Graph navGraph;
-        public Vector2 Target = new Vector2(500,500);
+        public Graph.Graph navGraph;
+        public bool showGraph = false;
+
+        public Vector2 Target = new Vector2(100,100);
+        private SteeringBehaviour.Decelaration normal;
+
         int Width { get; set; }
         int Height { get; set; }
+
         
         public Game1()
         {
@@ -36,10 +47,10 @@ namespace MonoGame
             graphics.PreferredBackBufferHeight = 960;
             graphics.ApplyChanges();
             graphics.ApplyChanges();
+
             Content.RootDirectory = "Content";
             camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
             //InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
-            
         }
 
         /// <summary>
@@ -67,7 +78,7 @@ namespace MonoGame
             em = new EntityManager();
 
             // Generate the graph with the map and static entities
-            //graph = new Graph(map, entityManager.GetStaticEntities());
+            navGraph = new Graph.Graph(map, em.GetStaticEntities());
 
             base.Initialize();
         }
@@ -81,7 +92,6 @@ namespace MonoGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             em.LoadContent(Content);
-            
         }
 
         /// <summary>
@@ -104,16 +114,24 @@ namespace MonoGame
                 Exit();
 
             var mouseState = Mouse.GetState();
+
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 Target = new Vector2(mouseState.X, mouseState.Y);
+                Survivor survivor = em.GetSurvivor();
+                survivor.SB = new SeekBehaviour(survivor, Target);
             }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.G) && !previousState.IsKeyDown(Keys.G))
+                showGraph = !showGraph;
 
             camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 
             mapRenderer.Update(map, gameTime);
 
             em.Update(gameTime);
+
+            previousState = Keyboard.GetState();
 
             base.Update(gameTime);
         }
@@ -127,6 +145,12 @@ namespace MonoGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             RenderWorld();
+
+            if (showGraph)
+                navGraph.Draw(spriteBatch);
+
+            this.DrawTarget();
+
             em.Draw(spriteBatch);
 
             base.Draw(gameTime);
@@ -146,6 +170,17 @@ namespace MonoGame
         public Vector2 WrapAround(Vector2 position)
         {
             return new Vector2((position.X + Width) % Width, (position.Y + Height) % Height);
+        }
+
+        public void DrawTarget()
+        {
+            spriteBatch.Begin();
+            spriteBatch.DrawCircle(Target, 5F, 12, Color.Red, 2F);
+            spriteBatch.End();
+        }
+        public Vector2 GetTarget()
+        {
+            return Target;
         }
     }
 }

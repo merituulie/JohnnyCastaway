@@ -17,6 +17,8 @@ namespace MonoGame.Entity
 
         public Texture2D palmtreeTexture;
         public Texture2D survivorTexture;
+        public Texture2D tentTexture;
+        public Texture2D bushTexture;
         public Texture2D seagullTexture;
 
         // public SpriteFont font;
@@ -26,6 +28,9 @@ namespace MonoGame.Entity
             staticEntities.Add(new Palmtree(new Vector2(730, 290), this, 50, 50));
             staticEntities.Add(new Palmtree(new Vector2(710, 310), this, 50, 50));
             staticEntities.Add(new Palmtree(new Vector2(650, 220), this, 50, 50));
+            staticEntities.Add(new Tent(new Vector2(480, 380), this, 50, 50));
+            staticEntities.Add(new Bush(new Vector2(260, 540), this, 50, 50));
+            staticEntities.Add(new Bush(new Vector2(380, 150), this, 50, 50));
 
             Survivor survivor = new Survivor(new Vector2(500, 500), this);
             movingEntities.Add(survivor);
@@ -48,7 +53,9 @@ namespace MonoGame.Entity
         public void LoadContent(ContentManager Content)
         {
             palmtreeTexture = Content.Load<Texture2D>("palmtree");
-
+            tentTexture = Content.Load<Texture2D>("Tent");
+            bushTexture = Content.Load<Texture2D>("bush");
+                       
             survivorTexture = Content.Load<Texture2D>("Player");
 
             seagullTexture = Content.Load<Texture2D>("Seagull");
@@ -103,6 +110,16 @@ namespace MonoGame.Entity
                 if (amountOfOverlap >= 0)
                     centralEntity.Pos += Vector2.Multiply(Vector2.Divide(ToEntity, distFromEachOther), amountOfOverlap);
             }
+        }
+
+        public List<StaticGameEntity> GetStaticEntities()
+        {
+            return staticEntities;
+        }
+
+        public Survivor GetSurvivor()
+        {
+            return movingEntities[0];
         }
     }
 }
