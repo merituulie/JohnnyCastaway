@@ -12,7 +12,7 @@ namespace MonoGame
         public Vector2 Side { get; set; }
         public float Mass { get; set; }
         public float MaxSpeed { get; set; }
-
+        public bool Tag { get; set; }
         public SteeringBehaviour SB { get; set; }
 
         public MovingEntity(Vector2 pos, EntityManager em) : base(pos, em)

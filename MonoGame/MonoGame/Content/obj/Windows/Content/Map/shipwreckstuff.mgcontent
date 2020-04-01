@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png</SourceFile>
-  <SourceTime>2020-03-25T16:22:36.3319835+01:00</SourceTime>
-  <DestFile>C:/Users/Merit/Documents/School/GameAIClone29.3 - Current/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/shipwreckstuff.xnb</DestFile>
-  <DestTime>2020-03-29T16:55:57.7693829+02:00</DestTime>
+  <SourceFile>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png</SourceFile>
+  <SourceTime>2020-03-25T09:26:16.703465+01:00</SourceTime>
+  <DestFile>D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/shipwreckstuff.xnb</DestFile>
+  <DestTime>2020-03-30T14:49:54.4791487+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
