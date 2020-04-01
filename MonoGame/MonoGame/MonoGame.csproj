@@ -43,11 +43,13 @@
   <ItemGroup>
     <Compile Include="Behaviour\ArriveBehaviour.cs" />
     <Compile Include="Behaviour\FleeBehaviour.cs" />
+    <Compile Include="Behaviour\FlockingBehaviour.cs" />
     <Compile Include="GoalBehaviour\GoalBehaviours\FollowPathGoal.cs" />
     <Compile Include="Behaviour\SeekBehaviour.cs" />
     <Compile Include="Behaviour\SteeringBehaviour.cs" />
     <Compile Include="Entity\BaseGameEntity.cs" />
     <Compile Include="Entity\EntityManager.cs" />
+    <Compile Include="Entity\MovingEntities\Seagull.cs" />
     <Compile Include="Entity\MovingEntity.cs" />
     <Compile Include="Entity\MovingEntities\Survivor.cs" />
     <Compile Include="Entity\StaticEntities\Bush.cs" />
