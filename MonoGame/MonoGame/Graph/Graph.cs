@@ -43,7 +43,7 @@ namespace MonoGame.Graph
             }
 
             // Remove nodes near entities
-            foreach (StaticGameEntity e in staticGameEntities) // StaticGameEntity
+            foreach (StaticGameEntity e in staticGameEntities)
             {
                 Vector2 vector = GetNearestNode(e.Pos);
 
@@ -67,6 +67,7 @@ namespace MonoGame.Graph
                 }
             }
 
+            // Add edges to nodes
             foreach (Node node in nodeMap.Values)
             {
                 Vector2 coordinate = node.coordinate;
@@ -76,7 +77,7 @@ namespace MonoGame.Graph
                 Vector2 down = new Vector2(coordinate.X, coordinate.Y + 32F);
 
                 if (nodeMap.ContainsKey(right))
-                    AddEdge(coordinate, right, 1); // AddEdge
+                    AddEdge(coordinate, right, 1);
                 if (nodeMap.ContainsKey(rightUp))
                     AddEdge(coordinate, rightUp, 2);
                 if (nodeMap.ContainsKey(rightDown))
@@ -151,27 +152,30 @@ namespace MonoGame.Graph
 
             int visitedNodes = 0;
 
+            // While the priorityqueue still has edges and not all nodes are visited
             while (pq.Size() > 0 && visitedNodes < nodeMap.Count)
             {
+                // Get the edge with the lowest cost
                 Edge path = pq.Remove();
 
+                // Get the node with shortest path from the lowest cost edge
                 Node pathNode = path.toNode;
 
                 if (pathNode.scratch != 0)
-                {
                     continue;
-                }
 
+                // Scratch a node if its visited
                 pathNode.scratch = 1;
                 visitedNodes++;
 
-
+                // Evaluate if the target node is found
                 if (pathNode.coordinate == destinationNode.coordinate)
                 {
                     LinkedList<Node> nodes = new LinkedList<Node>();
                     Node newNode = pathNode;
                     nodes.AddLast(newNode);
 
+                    // Mark the path
                     while (newNode.prev != null)
                     {
                         newNode.drawable = true;
@@ -181,20 +185,20 @@ namespace MonoGame.Graph
                     return nodes;
                 }
 
+                // Go through the edges to set the distance of the nodes
                 foreach (Edge edge in pathNode.edges)
                 {
                     Node destNode = edge.toNode;
-
                     double edgeCost = pathNode.dist + edge.gCost;
 
-                    if (destinationNode.dist > edgeCost)
+                    if (destNode.dist > edgeCost)
                     {
                         double heuresticX = Math.Abs(destinationNode.coordinate.X - destNode.coordinate.X);
                         double heuresticY = Math.Abs(destinationNode.coordinate.Y - destNode.coordinate.Y);
                         double edgeHeuresticCost = heuresticX + heuresticY;
 
-                        destinationNode.dist = edgeCost;
-                        destinationNode.prev = pathNode;
+                        destNode.dist = edgeCost;
+                        destNode.prev = pathNode;
 
                         pq.Add(new Edge(destNode, destNode.dist, edgeHeuresticCost));
                     }

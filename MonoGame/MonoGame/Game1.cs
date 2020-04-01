@@ -8,6 +8,7 @@ using MonoGame.Extended.Tiled.Graphics;
 using System;
 using System.Collections.Generic;
 using MonoGame.Extended;
+using MonoGame.Behaviour.GoalBasedBehaviour;
 
 namespace MonoGame
 {
@@ -111,6 +112,7 @@ namespace MonoGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            instance = this;
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
@@ -121,6 +123,7 @@ namespace MonoGame
                 Target = new Vector2(mouseState.X, mouseState.Y);
                 Survivor survivor = em.GetSurvivor();
                 survivor.SB.Target = Target;
+                survivor.GoalManager.ChangeGoal(new FollowPathGoal(survivor));
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.G) && !previousState.IsKeyDown(Keys.G))

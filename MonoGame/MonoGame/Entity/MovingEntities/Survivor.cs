@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Behaviour.GoalBasedBehaviour;
 using MonoGame.Entity;
+using MonoGame.GoalBehaviour;
 
 namespace MonoGame
 {
@@ -9,12 +11,15 @@ namespace MonoGame
     {
         public Color VColor { get; set; }
 
+        public GoalManager GoalManager;
+
         public Survivor(Vector2 pos, EntityManager em) : base(pos, em)
         {
             Velocity = new Vector2(0, 0f);
             Scale = 5;
             VColor = Color.Black;
 
+            GoalManager = new GoalManager(this);
             SB = new SeekBehaviour(this, pos);
         }
 

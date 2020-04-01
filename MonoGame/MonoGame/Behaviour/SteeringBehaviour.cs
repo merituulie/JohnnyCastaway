@@ -25,7 +25,7 @@ namespace MonoGame
         public SteeringBehaviour(MovingEntity me)
         {
             ME = me;
-            Target = new Vector2(200,200);
+            Target = new Vector2(0, 0);
         }
     }
 }

@@ -1,11 +1,1 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bush.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/bush.xnb","TextureProcessor","Texture2DContent",9571,5005,0.6931788
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/coconut.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/coconut.xnb","TextureProcessor","Texture2DContent",825,1685,0.1959915
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/islandMap.xnb","TiledMapProcessor","TiledMapContent",14283,118407,0.1645256
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/shipwreckstuff.xnb","TextureProcessor","Texture2DContent",18544,45685,0.0241524
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Map/terrain.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Map/terrain.xnb","TextureProcessor","Texture2DContent",171780,1978453,0.102256
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/palmtree.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/palmtree.xnb","TextureProcessor","Texture2DContent",3161,12685,0.0242074
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Player.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Player.xnb","TextureProcessor","Texture2DContent",1748,1381,0.0192927
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/preview_idle.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/preview_idle.xnb","TextureProcessor","Texture2DContent",14310,213085,0.021753
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Seagull.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Seagull.xnb","TextureProcessor","Texture2DContent",2819,4181,0.0155789
-"D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/Tent.png","D:/storage/AAI/GameAI/MonoGame/MonoGame/Content/bin/Windows/Content/Tent.xnb","TextureProcessor","Texture2DContent",3017,5701,0.0867838

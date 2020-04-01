@@ -12,6 +12,8 @@ namespace MonoGame.GoalBehaviour
 
         public List<Goal> SubGoals;
 
+        public Goal() { }
+
         public Goal(MovingEntity em) 
         {
             ME = em;

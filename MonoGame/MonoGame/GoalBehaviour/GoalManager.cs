@@ -62,9 +62,12 @@ namespace MonoGame.GoalBehaviour
             if (newGoal == null)
                 return;
 
-            PreviousGoal = CurrentGoal;
-            CurrentGoal.Execute();
-
+            if (PreviousGoal != null)
+            {
+                PreviousGoal = CurrentGoal;
+                CurrentGoal.Execute();
+            }
+            
             CurrentGoal = newGoal;
             CurrentGoal.Enter();
         }
