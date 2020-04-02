@@ -9,20 +9,19 @@ namespace MonoGame
 {
     class ArriveBehaviour : SteeringBehaviour
     {
-        Decelaration deceleration;
+        Deceleration deceleration;
 
-        public ArriveBehaviour(MovingEntity me, Vector2 target, Decelaration deceleration) : base(me, target)
+        public ArriveBehaviour(MovingEntity me, Vector2 target, Deceleration deceleration) : base(me, target)
         {
             this.deceleration = deceleration;
         }
         public override Vector2 Calculate()
         {
-            Vector2 targetpos = Target;
 
-            if (targetpos == null)
+            if (Target == null)
                 return new Vector2(0, 0);
 
-            Vector2 toTarget = Vector2.Subtract(targetpos, ME.Pos);
+            Vector2 toTarget = Vector2.Subtract(Target, ME.Pos);
             float distance = toTarget.Length();
 
             if (distance <= 0)

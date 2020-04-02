@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MonoGame.GoalBehaviour;
+using MonoGame.GoalBehaviour.GoalBehaviours;
 
 namespace MonoGame.Behaviour.GoalBasedBehaviour
 {
@@ -22,14 +23,14 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
 
         public static FollowPathGoal Instance => instance;
 
-        public FollowPathGoal(MovingEntity me) : base (me)
+        public FollowPathGoal(Survivor s) : base (s)
         {
+            Target = Game1.Instance.Target;
             PathToFollow = new LinkedList<Vector2>();
         }
 
         public override void Enter()
         {
-            Target = Game1.Instance.Target; 
 
             LinkedList<Node> newPathToFollow = Game1.Instance.navGraph.AStar(ME.Pos, Target);
 
@@ -39,46 +40,43 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
             Execute();
         }
 
-        public override void Execute()
+        public override bool Execute()
         {
+            GoalCompleted = false;
+
             if (PathToFollow.Count == 0)
+            {
                 Exit();
+                return GoalCompleted;
+            }
 
             if (Target != Game1.Instance.Target)
             {
                 Console.WriteLine("Pathfinding failed");
                 Exit();
+                return GoalCompleted;
             }
 
-            TraverseNodes(PathToFollow.First(), PathToFollow.Count);
+            SubGoals.RemoveAll(sg => sg.GoalCompleted == true);
+
+            if (PathToFollow.Count != 0 && !SubGoals.Any())
+            {
+                while (PathToFollow.Count != 0)
+                {
+                    AddSubGoal(new TraverseNodeGoal(ME, PathToFollow.First(), PathToFollow.Count));
+                    Console.WriteLine("Paths current first node: " + PathToFollow.First().ToString() + ", Number of nodes left on the list: " + PathToFollow.Count);
+                    PathToFollow.RemoveFirst();
+                }
+            }
+
+            SubGoals.ForEach(sg => sg.Execute());
+
+            return GoalCompleted;
         }
 
         public override void Exit()
         {
-        }
-
-        private void TraverseNodes(Vector2 targetNode, int PathCount)
-        {
-            int nodeCount = PathCount;
-
-            if (Vector2.Subtract(ME.SB.Target, ME.Pos).Length() < 32)
-                Exit();
-
-            switch (nodeCount)
-            {
-                case 5: case 4:
-                    ME.SB = new ArriveBehaviour(ME, targetNode, SteeringBehaviour.Decelaration.Fast);
-                    break;
-                case 3:
-                    ME.SB = new ArriveBehaviour(ME, targetNode, SteeringBehaviour.Decelaration.Normal);
-                    break;
-                case 2: case 1:
-                    ME.SB = new ArriveBehaviour(ME, targetNode, SteeringBehaviour.Decelaration.Slow);
-                    break;
-                default:
-                    ME.SB = new SeekBehaviour(ME, targetNode);
-                    break;
-            }
+            GoalCompleted = true;
         }
     }
 }

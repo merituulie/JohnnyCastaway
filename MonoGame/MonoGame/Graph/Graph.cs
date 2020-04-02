@@ -90,7 +90,7 @@ namespace MonoGame.Graph
         {
             Node node;
 
-            if (nodeMap.TryGetValue(coordinate, out node)) // TryGetValue
+            if (nodeMap.TryGetValue(coordinate, out node))
             {
                 return node;
             }
@@ -216,7 +216,7 @@ namespace MonoGame.Graph
                 foreach (Edge edge in node.edges)
                 {
                     if (node.drawable == true && edge.toNode.drawable == true)
-                        sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Red);
+                        sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Green);
                     else if (edge.toNode.scratch != 0)
                         sb.DrawLine(node.coordinate, edge.toNode.coordinate, Color.Yellow);
                     else
@@ -227,7 +227,7 @@ namespace MonoGame.Graph
             foreach (Node node in nodeMap.Values)
             {
                 if (node.drawable == true)
-                    sb.DrawCircle(node.coordinate, 3F, 12, Color.Red, 3f);
+                    sb.DrawCircle(node.coordinate, 3F, 12, Color.Green, 3f);
                 else if (node.scratch != 0)
                     sb.DrawCircle(node.coordinate, 2F, 12, Color.Yellow, 3F);
                 else

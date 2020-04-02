@@ -122,7 +122,7 @@ namespace MonoGame
             {
                 Target = new Vector2(mouseState.X, mouseState.Y);
                 Survivor survivor = em.GetSurvivor();
-                survivor.SB.Target = Target;
+                //survivor.SB.Target = Target;
                 survivor.GoalManager.ChangeGoal(new FollowPathGoal(survivor));
             }
 

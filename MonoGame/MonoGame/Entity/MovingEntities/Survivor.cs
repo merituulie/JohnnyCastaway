@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Behaviour;
 using MonoGame.Behaviour.GoalBasedBehaviour;
 using MonoGame.Entity;
 using MonoGame.GoalBehaviour;
@@ -19,8 +20,8 @@ namespace MonoGame
             Scale = 5;
             VColor = Color.Black;
 
+            SB = new IdleBehaviour(this);
             GoalManager = new GoalManager(this);
-            SB = new SeekBehaviour(this, pos);
         }
 
         public override void Draw(SpriteBatch sb)

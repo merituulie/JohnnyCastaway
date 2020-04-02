@@ -14,7 +14,7 @@ namespace MonoGame
 
         public Vector2 Target;
 
-        public enum Decelaration { Slow = 3, Normal = 2, Fast = 1 }
+        public enum Deceleration { Slow = 3, Normal = 2, Fast = 1 }
 
         public SteeringBehaviour(MovingEntity me, Vector2 target)
         {

@@ -8,21 +8,23 @@ namespace MonoGame.GoalBehaviour
 {
     abstract public class Goal
     {
-        public MovingEntity ME { get; set; }
+        public Survivor ME { get; set; }
 
         public List<Goal> SubGoals;
 
+        public bool GoalCompleted = false;
+
         public Goal() { }
 
-        public Goal(MovingEntity em) 
+        public Goal(Survivor s) 
         {
-            ME = em;
+            ME = s;
             SubGoals = new List<Goal>();
         }
 
         public abstract void Enter();
 
-        public abstract void Execute();
+        public abstract bool Execute();
 
         public abstract void Exit();
 
