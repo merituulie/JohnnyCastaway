@@ -9,9 +9,11 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
 {
     class TraverseNodeGoal : Goal
     {
-        private Vector2 Target;
+        public Vector2 Target;
+
         private int NodeCount;
-        private Goal PreviousGoal;
+
+        private GameTime gameTime;
 
         public TraverseNodeGoal(Survivor s, Vector2 target, int nodeCount) : base(s)
         {
@@ -21,21 +23,20 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
 
         public override void Enter()
         {
-            throw new NotImplementedException();
+            GoalCompleted = false;
         }
 
-        public override bool Execute()
+        public override bool Execute(GameTime gametime)
         {
-            if (PreviousGoal == null)
-                PreviousGoal = this;
+            //if (NodeCount == 0)
+            //{
+            //    Exit();
+            //    return GoalCompleted;
+            //}
 
-            if (NodeCount == 0)
-            {
-                Exit();
-                return GoalCompleted;
-            }
+            Console.WriteLine(Target);
 
-            if (Vector2.Subtract(Target, ME.Pos).Length() < 32 && PreviousGoal.GoalCompleted == true)
+            if (Vector2.Subtract(Target, ME.Pos).Length() < 3)
             {
                 Exit();
                 return GoalCompleted;
@@ -44,37 +45,21 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
             if (NodeCount == 1)
             {
                 ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Deceleration.Slow);
+                Game1.Instance.em.Update(gametime);
                 Exit();
             }
             else
             {
                 ME.SB = new SeekBehaviour(ME, Target);
+                Game1.Instance.em.Update(gametime);
                 Exit();
             }
 
-            //switch (NodeCount) // to simpler check
-            //{
-            //    case 5:
-            //    case 4:
-            //        ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Decelaration.Fast);
-            //        break;
-            //    case 3:
-            //        ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Decelaration.Normal);
-            //        break;
-            //    case 2:
-            //    case 1:
-            //        ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Decelaration.Slow);
-            //        break;
-            //    default:
-            //        ME.SB = new SeekBehaviour(ME, Target);
-            //        break;
-            //}
             return GoalCompleted;
         }
 
         public override void Exit()
         {
-            PreviousGoal = this;
             GoalCompleted = true;
         }
     }

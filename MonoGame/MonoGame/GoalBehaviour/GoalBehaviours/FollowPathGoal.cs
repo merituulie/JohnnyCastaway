@@ -37,12 +37,20 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
             foreach (Node node in newPathToFollow)
                 PathToFollow.AddFirst(node.coordinate);
 
-            Execute();
+            GoalCompleted = false;
+
+            //Execute();
+
+            //if (GoalCompleted == true)
+            //    return;
+            //else
+            //    Execute();
         }
 
-        public override bool Execute()
+        public override bool Execute(GameTime gametime)
         {
-            GoalCompleted = false;
+            if (GoalCompleted == true)
+                Exit();
 
             if (PathToFollow.Count == 0)
             {
@@ -69,7 +77,8 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
                 }
             }
 
-            SubGoals.ForEach(sg => sg.Execute());
+            SubGoals.Reverse();
+            SubGoals.ForEach(sg => sg.Execute(gametime));
 
             return GoalCompleted;
         }
@@ -77,6 +86,11 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
         public override void Exit()
         {
             GoalCompleted = true;
+        }
+
+        public override string ToString()
+        {
+            return $"Traverse Vertex {Target}";
         }
     }
 }

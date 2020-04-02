@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,7 @@ namespace MonoGame.GoalBehaviour
 
         public abstract void Enter();
 
-        public abstract bool Execute();
+        public abstract bool Execute(GameTime gametime);
 
         public abstract void Exit();
 

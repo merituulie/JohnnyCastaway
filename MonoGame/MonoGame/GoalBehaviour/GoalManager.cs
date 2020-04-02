@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,15 +50,15 @@ namespace MonoGame.GoalBehaviour
             return GlobalGoal;
         }
 
-        public void Update()
+        public void Update(GameTime gametime)
         {
             if (GlobalGoal != null)
-                GlobalGoal.Execute();
+                GlobalGoal.Execute(gametime);
             if (CurrentGoal != null)
-                CurrentGoal.Execute();
+                CurrentGoal.Execute(gametime);
         }
 
-        public void ChangeGoal(Goal newGoal)
+        public void ChangeGoal(Goal newGoal, GameTime gametime)
         {
             if (newGoal == null)
                 return;
@@ -65,16 +66,16 @@ namespace MonoGame.GoalBehaviour
             if (PreviousGoal != null)
             {
                 PreviousGoal = CurrentGoal;
-                CurrentGoal.Execute();
+                CurrentGoal.Execute(gametime);
             }
             
             CurrentGoal = newGoal;
             CurrentGoal.Enter();
         }
 
-        public void RevertToPreviousGoal()
+        public void RevertToPreviousGoal(GameTime gameTime)
         {
-            ChangeGoal(PreviousGoal);
+            ChangeGoal(PreviousGoal, gameTime);
         }
     }
 }
