@@ -5,6 +5,8 @@ using MonoGame.Behaviour;
 using MonoGame.Behaviour.GoalBasedBehaviour;
 using MonoGame.Entity;
 using MonoGame.GoalBehaviour;
+using MonoGame.GoalBehaviour.CompositeGoals;
+using System;
 
 namespace MonoGame
 {
@@ -12,7 +14,9 @@ namespace MonoGame
     {
         public Color VColor { get; set; }
 
-        public GoalManager GoalManager;
+        private CompositeGoal CompositeGoal;
+
+        private float TotalTimeElapsed;
 
         public Survivor(Vector2 pos, EntityManager em) : base(pos, em)
         {
@@ -20,8 +24,16 @@ namespace MonoGame
             Scale = 5;
             VColor = Color.Black;
 
-            SB = new IdleBehaviour(this);
-            GoalManager = new GoalManager(this);
+            CompositeGoal = new MakeDecisionGoal(this);
+        }
+
+        public override void Update(float timeElapsed)
+        {
+            CompositeGoal.Process();
+
+            base.Update(timeElapsed);
+
+            TotalTimeElapsed += timeElapsed;
         }
 
         public override void Draw(SpriteBatch sb)
@@ -32,12 +44,8 @@ namespace MonoGame
 
             //base.Draw(sb);
             sb.Draw(em.survivorTexture, Pos);
+            if (Game1.Instance.showInfo) sb.DrawString(em.fontTexture, CompositeGoal.ToString(), new Vector2(Pos.X + 10, Pos.Y + 10), Color.Green);
             sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
-        }
-
-        public SteeringBehaviour GetSurvivorBehaviour()
-        {
-            return SB;
         }
     }
 }

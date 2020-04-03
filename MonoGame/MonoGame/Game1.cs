@@ -34,6 +34,8 @@ namespace MonoGame
         public Graph.Graph navGraph;
         public bool showGraph = false;
 
+        public bool showInfo = false;
+
         public Vector2 Target = new Vector2(100,100);
         public enum Decelaration { Slow = 3, Normal = 2, Fast = 1 };
 
@@ -121,13 +123,13 @@ namespace MonoGame
             if (mouseState.LeftButton == ButtonState.Pressed)
             {
                 Target = new Vector2(mouseState.X, mouseState.Y);
-                Survivor survivor = em.GetSurvivor();
-                survivor.GoalManager.ChangeGoal(new FollowPathGoal(survivor), gameTime);
-                survivor.GoalManager.Update(gameTime);
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.G) && !previousState.IsKeyDown(Keys.G))
                 showGraph = !showGraph;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.I) && !previousState.IsKeyDown(Keys.I))
+                showInfo = !showInfo;
 
             //camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 

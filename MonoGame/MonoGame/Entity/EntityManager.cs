@@ -21,7 +21,7 @@ namespace MonoGame.Entity
         public Texture2D bushTexture;
         public Texture2D seagullTexture;
 
-        // public SpriteFont font;
+        public SpriteFont fontTexture;
 
         public EntityManager()
         {
@@ -47,7 +47,6 @@ namespace MonoGame.Entity
             movingEntities.Add(seagull4);
             movingEntities.Add(seagull5);
 
-
         }
 
         public void LoadContent(ContentManager Content)
@@ -59,6 +58,8 @@ namespace MonoGame.Entity
             survivorTexture = Content.Load<Texture2D>("Player");
 
             seagullTexture = Content.Load<Texture2D>("Seagull");
+
+            fontTexture = Content.Load<SpriteFont>("CharacterInfo");
         }
 
         public void Update(GameTime gt)

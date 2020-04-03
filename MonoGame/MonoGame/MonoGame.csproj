@@ -45,9 +45,10 @@
     <Compile Include="Behaviour\FleeBehaviour.cs" />
     <Compile Include="Behaviour\FlockingBehaviour.cs" />
     <Compile Include="Behaviour\IdleBehaviour.cs" />
-    <Compile Include="GoalBehaviour\GoalBehaviours\FollowPathGoal.cs" />
+    <Compile Include="DecisionMaking\CompositeGoals\FollowPathGoal.cs" />
     <Compile Include="Behaviour\SeekBehaviour.cs" />
     <Compile Include="Behaviour\SteeringBehaviour.cs" />
+    <Compile Include="DecisionMaking\GoalStatus.cs" />
     <Compile Include="Entity\BaseGameEntity.cs" />
     <Compile Include="Entity\EntityManager.cs" />
     <Compile Include="Entity\MovingEntities\Seagull.cs" />
@@ -58,9 +59,10 @@
     <Compile Include="Entity\StaticEntities\Tent.cs" />
     <Compile Include="Entity\StaticGameEntity.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GoalBehaviour\Goal.cs" />
-    <Compile Include="GoalBehaviour\GoalBehaviours\TraverseNodeGoal.cs" />
-    <Compile Include="GoalBehaviour\GoalManager.cs" />
+    <Compile Include="DecisionMaking\CompositeGoals\MakeDecisionGoal.cs" />
+    <Compile Include="DecisionMaking\IGoal.cs" />
+    <Compile Include="DecisionMaking\AtomicGoals\TraverseNodeGoal.cs" />
+    <Compile Include="DecisionMaking\CompositeGoal.cs" />
     <Compile Include="Graph\Edge.cs" />
     <Compile Include="Graph\Graph.cs" />
     <Compile Include="Graph\Node.cs" />

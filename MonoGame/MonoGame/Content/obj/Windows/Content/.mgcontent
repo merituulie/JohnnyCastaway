@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Merit/Documents/School/GameAIClone1.4.-Current/GameAI/MonoGame/MonoGame/Content/bush.png</File>
+    <File>C:/Users/Merit/Documents/School/GameAIClone1.4.-Current/GameAI/MonoGame/MonoGame/Content/CharacterInfo.spritefont</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone1.4.-Current/GameAI/MonoGame/MonoGame/Content/coconut.png</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone1.4.-Current/GameAI/MonoGame/MonoGame/Content/Map/islandMap.tmx</File>
     <File>C:/Users/Merit/Documents/School/GameAIClone1.4.-Current/GameAI/MonoGame/MonoGame/Content/Map/shipwreckstuff.png</File>
@@ -16,6 +17,7 @@
     <File>C:/Users/Merit/Documents/School/GameAIClone1.4.-Current/GameAI/MonoGame/MonoGame/Content/Tent.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -26,6 +26,13 @@
 /processorParam:TextureFormat=Color
 /build:bush.png
 
+#begin CharacterInfo.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:CharacterInfo.spritefont
+
 #begin coconut.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -127,3 +127,4 @@ C:\Users\Merit\Documents\School\GameAIClone1.4.-Current\GameAI\MonoGame\MonoGame
 C:\Users\Merit\Documents\School\GameAIClone1.4.-Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.csproj.CopyComplete
 C:\Users\Merit\Documents\School\GameAIClone1.4.-Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.exe
 C:\Users\Merit\Documents\School\GameAIClone1.4.-Current\GameAI\MonoGame\MonoGame\obj\x86\Debug\MonoGame.pdb
+C:\Users\Merit\Documents\School\GameAIClone1.4.-Current\GameAI\MonoGame\MonoGame\bin\Windows\x86\Debug\Content\CharacterInfo.xnb
