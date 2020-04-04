@@ -31,7 +31,7 @@ namespace MonoGame
 
         public override void Update(float timeElapsed)
         {
-            //angle = (float)(Math.Atan2(Heading.Y, Heading.X) * (180/Math.PI));
+            angle = (float)(Math.Atan2(Heading.Y, Heading.X));
 
             base.Update(timeElapsed);
         }
