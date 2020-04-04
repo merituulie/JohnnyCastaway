@@ -7,9 +7,6 @@ namespace MonoGame
 {
     public class Seagull : MovingEntity
     {
-        private float angle = 0;
-        private Rectangle sourceRectangle;
-        private Vector2 origin;
 
         public Seagull(Vector2 pos, EntityManager em) : base(pos, em)
         {
@@ -27,13 +24,6 @@ namespace MonoGame
 
             sb.Draw(em.seagullTexture, Pos, sourceRectangle, Color.White, angle, origin, Scale, SpriteEffects.None, 1);
             sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), Color.Black, thickness:2) ;
-        }
-
-        public override void Update(float timeElapsed)
-        {
-            angle = (float)(Math.Atan2(Heading.Y, Heading.X));
-
-            base.Update(timeElapsed);
         }
     }
 }

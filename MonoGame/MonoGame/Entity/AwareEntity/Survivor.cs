@@ -18,18 +18,21 @@ namespace MonoGame
         {
             Velocity = new Vector2(0, 0f);
 
-            Scale = 5;
+            Scale = 1;
             VColor = Color.Black;
             Mass = 4;
-            MaxSpeed = 7;
+            MaxSpeed = 8;
 
         }
 
         public override void Draw(SpriteBatch sb)
         {
             base.Draw(sb);
-            sb.Draw(em.survivorTexture, Pos);
-            sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 2), (int)Pos.Y + (int)(Velocity.Y * 2)), VColor, thickness: 2);
+            sourceRectangle = new Rectangle(0, 0, em.survivorTexture.Width, em.survivorTexture.Height);
+            origin = new Vector2(em.survivorTexture.Width / 2, em.survivorTexture.Height / 2);
+
+            sb.DrawLine(new Vector2((int)Pos.X, (int)Pos.Y), new Vector2((int)Pos.X + (int)(Velocity.X * 4), (int)Pos.Y + (int)(Velocity.Y * 4)), VColor, thickness: 2);
+            sb.Draw(em.survivorTexture, Pos, sourceRectangle, Color.White, angle, origin, Scale, SpriteEffects.None, 1);
         }
     }
 }

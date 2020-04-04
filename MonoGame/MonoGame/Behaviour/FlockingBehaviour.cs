@@ -20,26 +20,32 @@ namespace MonoGame
 
         public FlockingBehaviour(MovingEntity me) : base(me)
         {
-            maxSteeringForce = 20.0F;
-            separationAmount = 4.0F;
-            cohesionAmount = 5.0F;
-            alignmentAmount = 10.0F;
-            wanderAmount = 20.0F;
+            maxSteeringForce = 50.0F;
+            separationAmount = 10.0F;
+            cohesionAmount = 3.0F;
+            alignmentAmount = 15.0F;
+            wanderAmount = 10.0F;
         }
 
         public override Vector2 Calculate()
         {
             Vector2 steeringForce = new Vector2(0, 0);
 
-            ME.em.TagNeighbours(ME, 100);
+            ME.em.TagNeighbours(ME, 200);
             ME.em.EnforceNonPenetrationConstraint(ME);
             List<MovingEntity> entities = ME.em.GetMovingEntities();
 
-            steeringForce += Vector2.Multiply(Cohesion(ME, entities), cohesionAmount);
             steeringForce += Vector2.Multiply(Wander(ME, 30, 10, 5), wanderAmount);
             steeringForce += Vector2.Multiply(Alignment(ME, entities), alignmentAmount);
             steeringForce += Vector2.Multiply(Separation(ME, entities), separationAmount);
+            steeringForce += Vector2.Multiply(Cohesion(ME, entities), cohesionAmount);
 
+            // if flocking possibilities not found, take a random direction for wandering
+            if (steeringForce == new Vector2(0, 0))
+            {
+                Random random = new Random();
+                return steeringForce = new Vector2(RandomDirection(random), RandomDirection(random));
+            }
             return steeringForce.Truncate(maxSteeringForce);
         }
 
