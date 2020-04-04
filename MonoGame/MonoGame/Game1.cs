@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using MonoGame.Extended;
 using MonoGame.Behaviour.GoalBasedBehaviour;
+using System.Text;
 
 namespace MonoGame
 {
