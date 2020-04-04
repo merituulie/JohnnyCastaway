@@ -76,7 +76,7 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
 
         public override string ToString()
         {
-            return "Follow path, target: " + Target;
+            return "\nFollow path, target: " + Target + " " + base.ToString();
         }
     }
 }

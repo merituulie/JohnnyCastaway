@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using MonoGame.Behaviour;
 using MonoGame.DecisionMaking;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,8 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
         public void Activate()
         {
             GoalStatus = GoalStatus.Active;
+
+            ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Deceleration.Fast);
         }
 
         public GoalStatus Process()
@@ -38,12 +41,11 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
 
-            if (Vector2.Subtract(Target, ME.Pos).Length() < 10)
+            if (Vector2.Subtract(Target, ME.Pos).Length() < 20)
             {
+
                 Terminate();
             }
-
-            ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Deceleration.Slow);
 
             return GoalStatus;
         }
@@ -55,7 +57,7 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
 
         public override string ToString()
         {
-            return "Traverse node: " + Target;
+            return "\nTraverse node: " + Target;
         }
     }
 }

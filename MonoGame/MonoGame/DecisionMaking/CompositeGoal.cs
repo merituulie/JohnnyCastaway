@@ -35,8 +35,8 @@ namespace MonoGame.GoalBehaviour
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            SubGoals.ForEach(sg => stringBuilder.AppendLine(" " + sg.ToString()));
-            return base.ToString();
+            SubGoals.ForEach(sg => stringBuilder.AppendLine(" " + sg.ToString() + "\n"));
+            return stringBuilder.ToString();
         }
     }
 }

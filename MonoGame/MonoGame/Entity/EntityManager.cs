@@ -65,6 +65,7 @@ namespace MonoGame.Entity
         public void Update(GameTime gt)
         {
             movingEntities.ForEach(m => m.Update((float)gt.ElapsedGameTime.TotalSeconds * 0.8F));
+            
         }
 
         public void Draw(SpriteBatch sb)
