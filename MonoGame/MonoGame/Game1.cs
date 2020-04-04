@@ -53,7 +53,7 @@ namespace MonoGame
             Content.RootDirectory = "Content";
 
             //camera = new Camera(graphics.GraphicsDevice.Viewport, new Vector2(0, 0));
-            InitWorld(w: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, h: GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
+            InitWorld(w: 1010, h: 960);
         }
 
         public static Game1 Instance => instance;
