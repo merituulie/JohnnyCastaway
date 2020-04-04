@@ -15,6 +15,7 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
 
         public MakeDecisionGoal(MovingEntity me) : base(me) 
         { 
+
         }
 
         public override void Activate()
