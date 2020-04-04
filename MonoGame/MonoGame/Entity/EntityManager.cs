@@ -35,11 +35,11 @@ namespace MonoGame.Entity
             Survivor survivor = new Survivor(new Vector2(500, 500), this);
             movingEntities.Add(survivor);
 
-            Seagull seagull1 = new Seagull(new Vector2(200, 200), this);
+            Seagull seagull1 = new Seagull(new Vector2(500, 550), this);
             Seagull seagull2 = new Seagull(new Vector2(230, 230), this);
-            Seagull seagull3 = new Seagull(new Vector2(170, 230), this);
-            Seagull seagull4 = new Seagull(new Vector2(160, 240), this);
-            Seagull seagull5 = new Seagull(new Vector2(220, 250), this);
+            Seagull seagull3 = new Seagull(new Vector2(900, 800), this);
+            Seagull seagull4 = new Seagull(new Vector2(100, 100), this);
+            Seagull seagull5 = new Seagull(new Vector2(150, 150), this);
 
             movingEntities.Add(seagull1);
             movingEntities.Add(seagull2);
@@ -80,6 +80,9 @@ namespace MonoGame.Entity
 
         public void TagNeighbours(MovingEntity centralEntity, double radius)
         {
+            if (centralEntity.GetType() == typeof(Survivor))
+                 return;
+
             foreach (MovingEntity entity in movingEntities)
             {
                 // Clear current tag.
@@ -88,19 +91,26 @@ namespace MonoGame.Entity
                 // Calculate the difference in space
                 Vector2 difference = Vector2.Subtract(entity.Pos, centralEntity.Pos);
 
-                // When the entity is in range it gets tageed.
-                if (entity != centralEntity && difference.LengthSquared() < radius * radius)
+                // When the entity is in range it gets tagged.
+                if (entity != centralEntity && difference.LengthSquared() < radius * radius && entity.GetType() != typeof(Survivor))
                     entity.Tag = true;
             }
         }
         public void EnforceNonPenetrationConstraint(MovingEntity centralEntity)
         {
+            if (centralEntity.GetType() == typeof(Survivor))
+                return;
+
             foreach (MovingEntity entity in movingEntities)
             {
-                //make sure we don't check against the individual
-                if (entity == centralEntity) continue;
+                if (entity.GetType() == typeof(Survivor))
+                    continue;
 
-                // calculate the distance between the positions of the entities
+                    //make sure we don't check against the individual
+                if (entity == centralEntity) 
+                    continue;
+
+                    // calculate the distance between the positions of the entities
                 Vector2 ToEntity = Vector2.Subtract(centralEntity.Pos, entity.Pos);
 
                 float distFromEachOther = ToEntity.Length();
@@ -108,7 +118,7 @@ namespace MonoGame.Entity
                 //if this distance is smaller than the sum of their radii then this entity must be moved away in the direction parallel to the ToEntity vector
                 float amountOfOverlap = 10 + 10 - distFromEachOther;
 
-                //move the entity a distance away equivalent to the amount of overlap
+                    //move the entity a distance away equivalent to the amount of overlap
                 if (amountOfOverlap >= 0)
                     centralEntity.Pos += Vector2.Multiply(Vector2.Divide(ToEntity, distFromEachOther), amountOfOverlap);
             }

@@ -20,8 +20,8 @@ namespace MonoGame
 
             Scale = 5;
             VColor = Color.Black;
-            Mass = 2;
-            MaxSpeed = 5;
+            Mass = 4;
+            MaxSpeed = 7;
 
         }
 

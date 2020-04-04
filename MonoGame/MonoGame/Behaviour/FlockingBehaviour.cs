@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using MonoGame.Entity;
 using MonoGame.Extended;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,11 @@ namespace MonoGame
 
         public FlockingBehaviour(MovingEntity me) : base(me)
         {
-            maxSteeringForce = 10.0F;
+            maxSteeringForce = 20.0F;
             separationAmount = 4.0F;
-            cohesionAmount = 1.0F;
-            alignmentAmount = 5.0F;
-            wanderAmount = 5.0F;
+            cohesionAmount = 5.0F;
+            alignmentAmount = 10.0F;
+            wanderAmount = 20.0F;
         }
 
         public override Vector2 Calculate()
@@ -35,9 +36,9 @@ namespace MonoGame
             List<MovingEntity> entities = ME.em.GetMovingEntities();
 
             steeringForce += Vector2.Multiply(Cohesion(ME, entities), cohesionAmount);
+            steeringForce += Vector2.Multiply(Wander(ME, 30, 10, 5), wanderAmount);
             steeringForce += Vector2.Multiply(Alignment(ME, entities), alignmentAmount);
             steeringForce += Vector2.Multiply(Separation(ME, entities), separationAmount);
-            steeringForce += Vector2.Multiply(Wander(ME, 20, 5, 5), wanderAmount);
 
             return steeringForce.Truncate(maxSteeringForce);
         }
@@ -54,7 +55,7 @@ namespace MonoGame
                     continue;
 
                 centerOfMass += neighbour.Pos;
-                neighbourCount++;
+                    neighbourCount++;
             }
 
             if (neighbourCount > 0)
