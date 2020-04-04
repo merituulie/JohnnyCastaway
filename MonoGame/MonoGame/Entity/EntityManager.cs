@@ -35,9 +35,9 @@ namespace MonoGame.Entity
             Survivor survivor = new Survivor(new Vector2(500, 500), this);
             movingEntities.Add(survivor);
 
-            Seagull seagull1 = new Seagull(new Vector2(500, 550), this);
+            Seagull seagull1 = new Seagull(new Vector2(100, 250), this);
             Seagull seagull2 = new Seagull(new Vector2(230, 230), this);
-            Seagull seagull3 = new Seagull(new Vector2(900, 800), this);
+            Seagull seagull3 = new Seagull(new Vector2(140, 300), this);
             Seagull seagull4 = new Seagull(new Vector2(100, 100), this);
             Seagull seagull5 = new Seagull(new Vector2(150, 150), this);
 
@@ -73,6 +73,7 @@ namespace MonoGame.Entity
             sb.Begin();
             staticEntities.ForEach(s => s.Draw(sb));
             movingEntities.ForEach(m => m.Draw(sb));
+            sb.DrawString(fontTexture, this.ToString(), new Vector2(50, 900), Color.Black);
             sb.End();
         }
 
@@ -132,6 +133,16 @@ namespace MonoGame.Entity
         public Survivor GetSurvivor()
         {
             return (Survivor)movingEntities[0];
+        }
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            stringBuilder.AppendLine("Show/Hide Graph: G / g");
+            stringBuilder.AppendLine("Show/Hide Characterinfo: I / i");
+
+            return stringBuilder.ToString();
         }
     }
 }

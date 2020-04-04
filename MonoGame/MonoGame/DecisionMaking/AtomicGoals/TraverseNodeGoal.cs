@@ -41,7 +41,7 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
 
-            if (Vector2.Subtract(Target, ME.Pos).Length() < 20)
+            if (Vector2.Subtract(Target, ME.Pos).Length() < 30)
             {
 
                 Terminate();

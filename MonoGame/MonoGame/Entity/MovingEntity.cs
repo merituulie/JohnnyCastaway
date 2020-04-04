@@ -15,9 +15,15 @@ namespace MonoGame
         public bool Tag { get; set; }
         public SteeringBehaviour SB { get; set; }
 
+        public Vector2 origin;
+
+        public float angle = 0;
+
+        public Rectangle sourceRectangle;
+
         public MovingEntity(Vector2 pos, EntityManager em) : base(pos, em)
         {
-            Mass = 20;
+            Mass = 10;
             MaxSpeed = 500;
             Velocity = new Vector2(0f, 0f);
         }
@@ -41,7 +47,7 @@ namespace MonoGame
                 Side = Heading.PerpendicularClockwise();
             }
 
-            Console.WriteLine(ToString());
+            angle = (float)(Math.Atan2(Heading.Y, Heading.X));
         }
 
         public override string ToString()
