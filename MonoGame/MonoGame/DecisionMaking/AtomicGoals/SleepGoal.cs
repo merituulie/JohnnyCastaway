@@ -41,11 +41,11 @@ namespace MonoGame.DecisionMaking.AtomicGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
-            if (ME.Fatique >= 10f)
-                Terminate();
-
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
+
+            if (ME.Fatique >= 10f)
+                Terminate();
 
             return GoalStatus;
         }
@@ -57,7 +57,7 @@ namespace MonoGame.DecisionMaking.AtomicGoals
             GoalStatus = GoalStatus.Completed;
         }
 
-        private void Sleep(Object source, ElapsedEventArgs e) => ME.Fatique += 2f;
+        private void Sleep(Object source, ElapsedEventArgs e) => ME.Fatique += 1f;
 
         public override string ToString()
         {

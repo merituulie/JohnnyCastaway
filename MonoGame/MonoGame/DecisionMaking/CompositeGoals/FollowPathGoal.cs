@@ -54,7 +54,6 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
-
             if (PathToFollow.Count == 0)
                 Terminate();
 

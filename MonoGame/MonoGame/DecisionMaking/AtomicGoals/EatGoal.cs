@@ -41,11 +41,11 @@ namespace MonoGame.DecisionMaking.AtomicGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
-            if (ME.Hunger >= 10f)
-                Terminate();
-
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
+
+            if (ME.Hunger >= 3f)
+                Terminate();
 
             return GoalStatus;
         }
@@ -57,6 +57,6 @@ namespace MonoGame.DecisionMaking.AtomicGoals
             GoalStatus = GoalStatus.Completed;
         }
 
-        private void Eat(Object source, ElapsedEventArgs e) => ME.Hunger += 3f;
+        private void Eat(Object source, ElapsedEventArgs e) => ME.Hunger += 1f;
     }
 }

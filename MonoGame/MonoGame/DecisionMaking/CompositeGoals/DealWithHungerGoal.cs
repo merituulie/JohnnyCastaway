@@ -50,7 +50,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
-            if (ME.Hunger >= 10f)
+            if (ME.Hunger >= 3f  && SubGoals[0].GetType() == typeof(EatGoal) && SubGoals[0].GoalStatus == GoalStatus.Completed)
                 Terminate();
 
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)

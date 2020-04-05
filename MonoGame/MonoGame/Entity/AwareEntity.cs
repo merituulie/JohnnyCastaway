@@ -24,8 +24,8 @@ namespace MonoGame.Entity
 
         public AwareEntity(Vector2 pos, EntityManager em) : base(pos, em)
         {
-            Hunger = 10f;
-            Fatique = 20f;
+            Hunger = 3f; // 3f
+            Fatique = 1f;
 
             SB = new IdleBehaviour(this);
             CompositeGoal = new MakeDecisionGoal(this);

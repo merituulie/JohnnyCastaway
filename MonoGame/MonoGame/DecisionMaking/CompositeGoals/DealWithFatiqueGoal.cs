@@ -41,8 +41,10 @@ namespace MonoGame.DecisionMaking.CompositeGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
-            if (ME.Fatique >= 10f)
+            if (ME.Fatique >= 10f && SubGoals[0].GetType() == typeof(SleepGoal) && SubGoals[0].GoalStatus == GoalStatus.Completed)
+            {
                 Terminate();
+            }
 
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
