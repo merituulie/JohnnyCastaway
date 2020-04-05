@@ -1,12 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using MonoGame.Behaviour;
 using MonoGame.DecisionMaking;
 using MonoGame.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.GoalBehaviour.GoalBehaviours
 {
@@ -27,6 +21,7 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
         {
             GoalStatus = GoalStatus.Active;
 
+            // Give entity the behaviour needed to traverse through nodes
             ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Deceleration.Fast);
         }
 
@@ -39,6 +34,7 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
 
+            // Condition to complete the goal
             if (Vector2.Subtract(Target, ME.Pos).Length() < 30)
             {
                 Terminate();
@@ -54,7 +50,7 @@ namespace MonoGame.GoalBehaviour.GoalBehaviours
 
         public override string ToString()
         {
-            return "\nTraverse node: " + Target;
+            return "\nTraverse node";
         }
     }
 }

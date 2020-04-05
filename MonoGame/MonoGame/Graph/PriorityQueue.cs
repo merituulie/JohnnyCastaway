@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.Graph
 {
@@ -12,18 +9,11 @@ namespace MonoGame.Graph
         public int size;   // Number of elements in heap
         public T[] array;  // The heap array
 
-        //----------------------------------------------------------------------
-        // Constructor
-        //----------------------------------------------------------------------
         public PriorityQueue()
         {
             size = 0;
             array = new T[DEFAULT_CAPACITY];
         }
-
-        //----------------------------------------------------------------------
-        // Interface methods that have to be implemented for exam
-        //----------------------------------------------------------------------
 
         public void Add(T x)
         {

@@ -4,11 +4,7 @@ using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.Entity;
 using MonoGame.Entity.StaticEntities;
 using MonoGame.GoalBehaviour;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.DecisionMaking.CompositeGoals
 {
@@ -29,6 +25,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
         {
             GoalStatus = GoalStatus.Active;
 
+            // Get the decided position of the tent to use by the pathfinder
             foreach (StaticGameEntity entity in EM.GetStaticEntities())
             {
                 if (entity.GetType() == typeof(Tent))
@@ -41,6 +38,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
+            // Make sure that sleeping subgoal is terminated first and terminate, when fatique is good
             if (ME.Fatique >= 10f && SubGoals[0].GetType() == typeof(SleepGoal) && SubGoals[0].GoalStatus == GoalStatus.Completed)
             {
                 Terminate();
@@ -51,6 +49,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
 
             SubGoals.RemoveAll(sg => sg.GoalStatus == GoalStatus.Completed);
 
+            // Get a path to traverse to the tent
             if (!SubGoals.OfType<FollowPathGoal>().Any())
             {
                 FollowPathGoal comp = new FollowPathGoal(ME, TentAsTarget);
@@ -59,6 +58,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
 
             SubGoals.ForEach(sg => sg.Process());
 
+            // Once path is traversed, sleep
             if (Vector2.Subtract(TentAsTarget, ME.Pos).Length() < 10 && !SubGoals.OfType<SleepGoal>().Any())
             {
 

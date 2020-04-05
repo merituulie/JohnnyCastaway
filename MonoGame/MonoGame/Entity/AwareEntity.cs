@@ -4,11 +4,7 @@ using MonoGame.Behaviour;
 using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.GoalBehaviour;
 using MonoGame.GoalBehaviour.CompositeGoals;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.Entity
 {
@@ -24,8 +20,8 @@ namespace MonoGame.Entity
 
         public AwareEntity(Vector2 pos, EntityManager em) : base(pos, em)
         {
-            Hunger = 3f; // 3f
-            Fatique = 1f;
+            Hunger = 3f;
+            Fatique = 3f;
 
             SB = new IdleBehaviour(this);
             CompositeGoal = new MakeDecisionGoal(this);

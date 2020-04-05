@@ -103,6 +103,7 @@ namespace MonoGame.Graph
             }
         }
 
+        // Get the nearest node to the destinationPoint
         public Vector2 GetNearestNode(Vector2 position)
         {
             return new Vector2(((int)position.X) / 32 * 32 + 16, ((int)position.Y) / 32 * 32 + 16);
@@ -193,6 +194,7 @@ namespace MonoGame.Graph
 
                     if (destNode.dist > edgeCost)
                     {
+                        // Calculating the Manhattan distance
                         double heuresticX = Math.Abs(destinationNode.coordinate.X - destNode.coordinate.X);
                         double heuresticY = Math.Abs(destinationNode.coordinate.Y - destNode.coordinate.Y);
                         double edgeHeuresticCost = heuresticX + heuresticY;
@@ -209,6 +211,7 @@ namespace MonoGame.Graph
 
         public void Draw(SpriteBatch sb)
         {
+            // Draw the graph, dimgray to display the whole grid, green to show the chosen path and yellow to show which other edges we're considered
             sb.Begin();
 
             foreach (Node node in nodeMap.Values)

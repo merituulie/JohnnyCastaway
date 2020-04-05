@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
-using System;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using MonoGame.Entity.StaticEntities;
 
@@ -56,7 +53,6 @@ namespace MonoGame.Entity
             bushTexture = Content.Load<Texture2D>("bush");
                        
             survivorTexture = Content.Load<Texture2D>("Player");
-
             seagullTexture = Content.Load<Texture2D>("Seagull");
 
             fontTexture = Content.Load<SpriteFont>("CharacterInfo");
@@ -65,7 +61,6 @@ namespace MonoGame.Entity
         public void Update(GameTime gt)
         {
             movingEntities.ForEach(m => m.Update((float)gt.ElapsedGameTime.TotalSeconds * 0.8F));
-            
         }
 
         public void Draw(SpriteBatch sb)
@@ -141,6 +136,7 @@ namespace MonoGame.Entity
 
             stringBuilder.AppendLine("Show/Hide Graph: G / g");
             stringBuilder.AppendLine("Show/Hide Characterinfo: I / i");
+            stringBuilder.AppendLine("Create a new target: MouseClick");
 
             return stringBuilder.ToString();
         }

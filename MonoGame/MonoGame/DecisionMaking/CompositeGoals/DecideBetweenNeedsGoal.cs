@@ -1,10 +1,5 @@
 ﻿using MonoGame.Entity;
 using MonoGame.GoalBehaviour;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.DecisionMaking.CompositeGoals
 {

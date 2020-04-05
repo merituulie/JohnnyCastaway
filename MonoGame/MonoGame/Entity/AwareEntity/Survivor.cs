@@ -1,14 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using MonoGame.Behaviour;
-using MonoGame.Behaviour.GoalBasedBehaviour;
-using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.Entity;
-using MonoGame.GoalBehaviour;
-using MonoGame.GoalBehaviour.CompositeGoals;
-using System;
-using System.Linq;
 
 namespace MonoGame
 {

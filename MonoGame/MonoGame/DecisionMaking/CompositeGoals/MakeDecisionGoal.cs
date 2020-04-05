@@ -1,14 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using MonoGame.Behaviour.GoalBasedBehaviour;
 using MonoGame.DecisionMaking;
-using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.DecisionMaking.CompositeGoals;
 using MonoGame.Entity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.GoalBehaviour.CompositeGoals
 {
@@ -65,6 +60,7 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
+            // Remove subgoals
             SubGoals.RemoveAll(sg => sg.GoalStatus == GoalStatus.Completed ||
             sg.GoalStatus == GoalStatus.Failed);
 
@@ -72,7 +68,7 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
             if (!SubGoals.OfType<DecideBetweenNeedsGoal>().Any() && GetDesirability(ME.Hunger, ME.Fatique) < 0.5)
                 AddSubGoal(new DecideBetweenNeedsGoal(ME));
 
-            // If the target changes
+            // If the target changes and is not used by other goals, get a new path
             if (Target != Game1.Instance.Target && !SubGoals.OfType<DecideBetweenNeedsGoal>().Any())
             {
                 AddSubGoal(new FollowPathGoal(ME));
@@ -91,10 +87,14 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
 
         public override string ToString()
         {
-            //if (base.ToString().Equals(""))
-                return "Making decisions... " + "\nHunger: " + ME.Hunger + "\nFatique: " + ME.Fatique + base.ToString();
-            //else
-                //return base.ToString();
+            if (base.ToString().Equals(""))
+            {
+                string fatiqueAsString = ME.Fatique.ToString("0.00");
+                string hungerAsString = ME.Hunger.ToString("0.00");
+                return "Making decisions... " + "\nHunger: " + hungerAsString + "\nFatique: " + fatiqueAsString + base.ToString();
+            }
+            else
+                return base.ToString();
         }
     }
 }

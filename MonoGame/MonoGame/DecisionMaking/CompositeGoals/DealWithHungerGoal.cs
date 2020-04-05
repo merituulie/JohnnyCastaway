@@ -4,13 +4,8 @@ using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.Entity;
 using MonoGame.Entity.StaticEntities;
 using MonoGame.GoalBehaviour;
-using MonoGame.Graph;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.DecisionMaking.CompositeGoals
 {
@@ -33,12 +28,14 @@ namespace MonoGame.DecisionMaking.CompositeGoals
 
             List<Bush> bushes = new List<Bush>();
 
+            // Add bushes to the list
             foreach (StaticGameEntity entity in EM.GetStaticEntities())
             {
                 if (entity.GetType() == typeof(Bush))
                     bushes.Add((Bush)entity);
             }
 
+            // Calculate, which bush is nearer to the entity
             if (Vector2.Subtract(ME.Pos, bushes[0].Pos).Length() < Vector2.Subtract(ME.Pos, bushes[1].Pos).Length())
                 BushAsTarget = new Vector2(bushes[0].Pos.X + 40, bushes[0].Pos.Y + 50);
             else
@@ -50,6 +47,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
+            // Make sure that eating subgoal is terminated first and terminate, when hunger is good
             if (ME.Hunger >= 3f  && SubGoals[0].GetType() == typeof(EatGoal) && SubGoals[0].GoalStatus == GoalStatus.Completed)
                 Terminate();
 
@@ -58,6 +56,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
 
             SubGoals.RemoveAll(sg => sg.GoalStatus == GoalStatus.Completed);
 
+            // Get a path to traverse to the bush
             if (!SubGoals.OfType<FollowPathGoal>().Any())
             {
                 FollowPathGoal comp = new FollowPathGoal(ME, BushAsTarget);
@@ -66,6 +65,7 @@ namespace MonoGame.DecisionMaking.CompositeGoals
             
             SubGoals.ForEach(sg => sg.Process());
 
+            // Once path is traversed, eat
             if (Vector2.Subtract(BushAsTarget, ME.Pos).Length() < 10 && !SubGoals.OfType<EatGoal>().Any())
             {
 

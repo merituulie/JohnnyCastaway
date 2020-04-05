@@ -12,10 +12,10 @@ namespace MonoGame.Graph
         public Vector2 coordinate;
         public LinkedList<Edge> edges;
         public Node prev;
-        public int scratch;
+        public int scratch; // Helper to see, if the node is visited
 
         public double dist;
-        public bool drawable;
+        public bool drawable; // Helper to see, if the node is drawable
 
         public Node(Vector2 coordinate)
         {

@@ -2,14 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Entity;
-using MonoGame.Graph;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Graphics;
-using System;
-using System.Collections.Generic;
 using MonoGame.Extended;
-using MonoGame.Behaviour.GoalBasedBehaviour;
-using System.Text;
 
 namespace MonoGame
 {
@@ -21,7 +16,6 @@ namespace MonoGame
         private static Game1 instance = new Game1();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Camera camera;
 
         private KeyboardState previousState = Keyboard.GetState();
 
@@ -68,7 +62,7 @@ namespace MonoGame
         {
             this.IsMouseVisible = true;
 
-            this.Window.AllowUserResizing = true;
+            this.Window.AllowUserResizing = false;
 
             //Load the compiled map
             map = Content.Load<TiledMap>("Map/islandMap");
@@ -116,6 +110,7 @@ namespace MonoGame
         protected override void Update(GameTime gameTime)
         {
             instance = this;
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
@@ -131,8 +126,6 @@ namespace MonoGame
 
             if (Keyboard.GetState().IsKeyDown(Keys.I) && !previousState.IsKeyDown(Keys.I))
                 showInfo = !showInfo;
-
-            //camera.UpdateCamera(graphics.GraphicsDevice.Viewport);
 
             mapRenderer.Update(map, gameTime);
 
@@ -184,10 +177,6 @@ namespace MonoGame
             spriteBatch.Begin();
             spriteBatch.DrawCircle(Target, 5F, 12, Color.Red, 2F);
             spriteBatch.End();
-        }
-        public Vector2 GetTarget()
-        {
-            return Target;
         }
     }
 }

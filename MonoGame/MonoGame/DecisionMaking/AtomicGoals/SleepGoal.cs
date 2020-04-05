@@ -1,10 +1,6 @@
 ﻿using MonoGame.Entity;
 using MonoGame.GoalBehaviour;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 
 namespace MonoGame.DecisionMaking.AtomicGoals
@@ -29,6 +25,7 @@ namespace MonoGame.DecisionMaking.AtomicGoals
             previousMaxSpeed = ME.MaxSpeed;
             ME.MaxSpeed = 0;
 
+            // Set a timer to increase the fatique
             timer = new Timer();
             timer.Interval = 1000;
             timer.AutoReset = true;
@@ -44,6 +41,7 @@ namespace MonoGame.DecisionMaking.AtomicGoals
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
 
+            // Condition to complete the goal
             if (ME.Fatique >= 10f)
                 Terminate();
 

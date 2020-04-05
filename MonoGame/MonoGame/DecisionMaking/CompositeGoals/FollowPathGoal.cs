@@ -3,14 +3,10 @@ using MonoGame.Graph;
 using System;
 using System.Collections.Generic;
 using MonoGame.Entity;
-using MonoGame.Behaviour;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MonoGame.GoalBehaviour;
 using MonoGame.GoalBehaviour.GoalBehaviours;
 using MonoGame.DecisionMaking;
-using MonoGame.DecisionMaking.CompositeGoals;
 
 namespace MonoGame.Behaviour.GoalBasedBehaviour
 {
@@ -18,7 +14,6 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
     {
         private LinkedList<Vector2> PathToFollow;
         private Vector2 Target;
-        private Vector2 InitialTarget;
         private bool PathFindingAsSubGoal;
 
         public FollowPathGoal(AwareEntity me) : base(me)
@@ -29,6 +24,7 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
             PathFindingAsSubGoal = false;
         }
 
+        // Overload of method to use if the pathfollowing is needed by another goal
         public FollowPathGoal(AwareEntity me, Vector2 target) : base(me)
         {
             GoalStatus = GoalStatus.Inactive;
@@ -49,14 +45,15 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
 
         public override GoalStatus Process()
         {
-            InitialTarget = Target;
 
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
+            // Condition to complete the goal
             if (PathToFollow.Count == 0)
                 Terminate();
 
+            // If target changes during pathfinding and pathfinding is not used by another goal, return from this goal
             if (Target != Game1.Instance.Target && !PathFindingAsSubGoal)
             {
                 Console.WriteLine("Pathfinding failed");
@@ -68,10 +65,10 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
 
             SubGoals.RemoveAll(sg => sg.GoalStatus == GoalStatus.Completed);
 
+            // Add traversing each node as subgoal to process them later
             if (PathToFollow.Count != 0 && !SubGoals.OfType<TraverseNodeGoal>().Any())
             {
                 AddSubGoal(new TraverseNodeGoal(ME, PathToFollow.First()));
-                Console.WriteLine("Paths current first node: " + PathToFollow.First().ToString() + ", Number of nodes left on the list: " + PathToFollow.Count);
                 PathToFollow.RemoveFirst();
             }
 
@@ -87,7 +84,7 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
 
         public override string ToString()
         {
-            return "Follow path, target: " + Target + " " + base.ToString();
+            return "\nFollow path " + base.ToString();
         }
     }
 }
