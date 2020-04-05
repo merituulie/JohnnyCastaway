@@ -1,60 +1,68 @@
-﻿using Microsoft.Xna.Framework;
-using MonoGame.Behaviour;
-using MonoGame.DecisionMaking;
-using MonoGame.Entity;
+﻿using MonoGame.Entity;
+using MonoGame.GoalBehaviour;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
-namespace MonoGame.GoalBehaviour.GoalBehaviours
+namespace MonoGame.DecisionMaking.AtomicGoals
 {
-    class TraverseNodeGoal : Goal
+    class SleepGoal : Goal
     {
         public GoalStatus GoalStatus { get; set; }
+        private Timer timer;
 
         private AwareEntity ME;
-        private Vector2 Target;
+        private float previousMaxSpeed;
 
-        public TraverseNodeGoal(AwareEntity me, Vector2 target) 
+        public SleepGoal(AwareEntity me)
         {
             ME = me;
-            Target = target;
         }
 
         public void Activate()
         {
             GoalStatus = GoalStatus.Active;
 
-            ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Deceleration.Fast);
+            previousMaxSpeed = ME.MaxSpeed;
+            ME.MaxSpeed = 0;
+
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.AutoReset = true;
+            timer.Elapsed += Sleep;
+            timer.Enabled = true;
         }
 
         public GoalStatus Process()
         {
-
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
+            if (ME.Fatique >= 10f)
+                Terminate();
+
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
-
-            if (Vector2.Subtract(Target, ME.Pos).Length() < 30)
-            {
-                Terminate();
-            }
 
             return GoalStatus;
         }
 
         public void Terminate()
         {
+            timer.Stop();
+            ME.MaxSpeed = previousMaxSpeed;
             GoalStatus = GoalStatus.Completed;
         }
 
+        private void Sleep(Object source, ElapsedEventArgs e) => ME.Fatique += 2f;
+
         public override string ToString()
         {
-            return "\nTraverse node: " + Target;
+            return "Z z z Z z...";
         }
+
     }
 }

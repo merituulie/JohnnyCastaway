@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using MonoGame.Behaviour.GoalBasedBehaviour;
 using MonoGame.DecisionMaking;
+using MonoGame.DecisionMaking.AtomicGoals;
+using MonoGame.DecisionMaking.CompositeGoals;
+using MonoGame.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +16,8 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
     {
         private Vector2 Target;
 
-        public MakeDecisionGoal(MovingEntity me) : base(me) 
+        public MakeDecisionGoal(AwareEntity me) : base(me) 
         { 
-
         }
 
         public override void Activate()
@@ -31,7 +33,17 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
             SubGoals.RemoveAll(sg => sg.GoalStatus == GoalStatus.Completed ||
             sg.GoalStatus == GoalStatus.Failed);
 
-            if (Target != Game1.Instance.Target)
+            if (ME.Hunger < 5 && !SubGoals.OfType<DealWithHungerGoal>().Any())
+            {
+                AddSubGoal(new DealWithHungerGoal(ME, ME.em));
+            }
+
+            if (ME.Fatique < 8 && !SubGoals.OfType<DealWithFatiqueGoal>().Any())
+            {
+                AddSubGoal(new DealWithFatiqueGoal(ME, ME.em));
+            }
+
+            if (Target != Game1.Instance.Target && !SubGoals.OfType<DealWithHungerGoal>().Any())
             {
                 AddSubGoal(new FollowPathGoal(ME));
                 Target = Game1.Instance.Target;
@@ -48,7 +60,10 @@ namespace MonoGame.GoalBehaviour.CompositeGoals
 
         public override string ToString()
         {
-            return "Making decisions... " + base.ToString();
+            if (base.ToString().Equals(""))
+                return "Making decisions... " + "\nHunger: " + ME.Hunger + "\nFatique: " + ME.Fatique;
+            else
+                return base.ToString();
         }
     }
 }

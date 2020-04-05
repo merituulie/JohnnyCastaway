@@ -3,10 +3,12 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Behaviour;
 using MonoGame.Behaviour.GoalBasedBehaviour;
+using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.Entity;
 using MonoGame.GoalBehaviour;
 using MonoGame.GoalBehaviour.CompositeGoals;
 using System;
+using System.Linq;
 
 namespace MonoGame
 {
@@ -22,7 +24,6 @@ namespace MonoGame
             VColor = Color.Black;
             Mass = 4;
             MaxSpeed = 8;
-
         }
 
         public override void Draw(SpriteBatch sb)

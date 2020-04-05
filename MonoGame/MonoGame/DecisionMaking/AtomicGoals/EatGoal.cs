@@ -1,60 +1,62 @@
-﻿using Microsoft.Xna.Framework;
-using MonoGame.Behaviour;
-using MonoGame.DecisionMaking;
-using MonoGame.Entity;
+﻿using MonoGame.Entity;
+using MonoGame.GoalBehaviour;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
-namespace MonoGame.GoalBehaviour.GoalBehaviours
+namespace MonoGame.DecisionMaking.AtomicGoals
 {
-    class TraverseNodeGoal : Goal
+    class EatGoal : Goal
     {
         public GoalStatus GoalStatus { get; set; }
+        private Timer timer;
 
         private AwareEntity ME;
-        private Vector2 Target;
+        private float previousMaxSpeed;
 
-        public TraverseNodeGoal(AwareEntity me, Vector2 target) 
+        public EatGoal(AwareEntity me)
         {
             ME = me;
-            Target = target;
         }
 
         public void Activate()
         {
             GoalStatus = GoalStatus.Active;
 
-            ME.SB = new ArriveBehaviour(ME, Target, SteeringBehaviour.Deceleration.Fast);
+            previousMaxSpeed = ME.MaxSpeed;
+            ME.MaxSpeed = 0;
+
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.AutoReset = true;
+            timer.Elapsed += Eat;
+            timer.Enabled = true;
         }
 
         public GoalStatus Process()
         {
-
             if (GoalStatus == GoalStatus.Inactive)
                 Activate();
 
+            if (ME.Hunger >= 10f)
+                Terminate();
+
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
-
-            if (Vector2.Subtract(Target, ME.Pos).Length() < 30)
-            {
-                Terminate();
-            }
 
             return GoalStatus;
         }
 
         public void Terminate()
         {
+            timer.Stop();
+            ME.MaxSpeed = previousMaxSpeed;
             GoalStatus = GoalStatus.Completed;
         }
 
-        public override string ToString()
-        {
-            return "\nTraverse node: " + Target;
-        }
+        private void Eat(Object source, ElapsedEventArgs e) => ME.Hunger += 3f;
     }
 }

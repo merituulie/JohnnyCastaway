@@ -45,6 +45,10 @@
     <Compile Include="Behaviour\FleeBehaviour.cs" />
     <Compile Include="Behaviour\FlockingBehaviour.cs" />
     <Compile Include="Behaviour\IdleBehaviour.cs" />
+    <Compile Include="DecisionMaking\AtomicGoals\EatGoal.cs" />
+    <Compile Include="DecisionMaking\AtomicGoals\SleepGoal.cs" />
+    <Compile Include="DecisionMaking\CompositeGoals\DealWithFatiqueGoal.cs" />
+    <Compile Include="DecisionMaking\CompositeGoals\DealWithHungerGoal.cs" />
     <Compile Include="DecisionMaking\CompositeGoals\FollowPathGoal.cs" />
     <Compile Include="Behaviour\SeekBehaviour.cs" />
     <Compile Include="Behaviour\SteeringBehaviour.cs" />

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using MonoGame.DecisionMaking;
+using MonoGame.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,12 @@ namespace MonoGame.GoalBehaviour
 {
     abstract class CompositeGoal : Goal
     {
-        public MovingEntity ME { get; set; }
+        public AwareEntity ME { get; set; }
         public GoalStatus GoalStatus { get; set; }
 
         public List<Goal> SubGoals { get; set; }
 
-        public CompositeGoal(MovingEntity me)
+        public CompositeGoal(AwareEntity me)
         {
             ME = me;
             SubGoals = new List<Goal>();

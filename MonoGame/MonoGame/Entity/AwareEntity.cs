@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame.Behaviour;
+using MonoGame.DecisionMaking.AtomicGoals;
 using MonoGame.GoalBehaviour;
 using MonoGame.GoalBehaviour.CompositeGoals;
 using System;
@@ -16,8 +18,16 @@ namespace MonoGame.Entity
 
         private float TotalTimeElapsed;
 
+        public float Hunger { get; set; }
+
+        public float Fatique { get; set; }
+
         public AwareEntity(Vector2 pos, EntityManager em) : base(pos, em)
         {
+            Hunger = 10f;
+            Fatique = 20f;
+
+            SB = new IdleBehaviour(this);
             CompositeGoal = new MakeDecisionGoal(this);
         }
 
@@ -28,6 +38,13 @@ namespace MonoGame.Entity
             base.Update(timeElapsed);
 
             TotalTimeElapsed += timeElapsed;
+
+            if (TotalTimeElapsed > 1f && !CompositeGoal.SubGoals.OfType<EatGoal>().Any() && !CompositeGoal.SubGoals.OfType<SleepGoal>().Any())
+            {
+                TotalTimeElapsed = 0;
+                Hunger -= 0.05f;
+                Fatique -= 0.02f;
+            }
         }
 
         public override void Draw(SpriteBatch sb)
