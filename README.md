@@ -1,4 +1,6 @@
 # GameAI
+To run the program use this file:
+	MonoGame\MonoGame\bin\Windows\x86\Debug\Monogame.exe
 
 Credits, Authors
  
