@@ -68,7 +68,7 @@ namespace MonoGame.Entity
             sb.Begin();
             staticEntities.ForEach(s => s.Draw(sb));
             movingEntities.ForEach(m => m.Draw(sb));
-            sb.DrawString(fontTexture, this.ToString(), new Vector2(50, 900), Color.Black);
+            sb.DrawString(fontTexture, this.ToString(), new Vector2(50, 850), Color.Black);
             sb.End();
         }
 
@@ -133,6 +133,10 @@ namespace MonoGame.Entity
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
+
+
+            stringBuilder.AppendLine("Survivor hunger: " + GetSurvivor().Hunger.ToString("0.00"));
+            stringBuilder.AppendLine("Survivor fatique: " + GetSurvivor().Fatique.ToString("0.00") + "\n");
 
             stringBuilder.AppendLine("Show/Hide Graph: G / g");
             stringBuilder.AppendLine("Show/Hide Characterinfo: I / i");

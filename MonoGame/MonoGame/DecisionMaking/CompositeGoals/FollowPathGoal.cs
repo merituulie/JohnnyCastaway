@@ -7,6 +7,7 @@ using System.Linq;
 using MonoGame.GoalBehaviour;
 using MonoGame.GoalBehaviour.GoalBehaviours;
 using MonoGame.DecisionMaking;
+using MonoGame.DecisionMaking.CompositeGoals;
 
 namespace MonoGame.Behaviour.GoalBasedBehaviour
 {
@@ -53,12 +54,17 @@ namespace MonoGame.Behaviour.GoalBasedBehaviour
             if (PathToFollow.Count == 0)
                 Terminate();
 
-            // If target changes during pathfinding and pathfinding is not used by another goal, return from this goal
-            if (Target != Game1.Instance.Target && !PathFindingAsSubGoal)
+
+            if (!SubGoals.OfType<DecideBetweenNeedsGoal>().Any())
             {
-                Console.WriteLine("Pathfinding failed");
-                GoalStatus = GoalStatus.Failed;
+                // If target changes during pathfinding and pathfinding is not used by another goal, return from this goal
+                if (Target != Game1.Instance.Target && !PathFindingAsSubGoal)
+                {
+                    Console.WriteLine("Pathfinding failed, calculating new path");
+                    GoalStatus = GoalStatus.Failed;
+                }
             }
+            
 
             if (GoalStatus == GoalStatus.Completed || GoalStatus == GoalStatus.Failed)
                 return GoalStatus;
