@@ -1,3 +1,5 @@
 
 *.ide
 *.ide
+.vs
+.vs/*
