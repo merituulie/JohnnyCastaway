@@ -4,11 +4,15 @@
 
 
 Johnny Castaway trying to survive the hunger by finding himself something to eat.
+
 To run the program, run the MonoGame.exe file.
 
 Sprites: 
+
   Coconut: https://imgbin.com/, author: knopiczka
+  
   Palm tree: https://ya-webdesign.com/image/leaf-sprite-png/726291.html
+  
   Enjoy-Writing SpriteFont: https://www.dafont.com/
 
   Island Tileset:
