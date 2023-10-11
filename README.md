@@ -1,7 +1,8 @@
-![image](https://github.com/merituulie/GameAI/assets/44494010/2e2a97c4-1316-4b30-90a0-fbfb0e9fbb33)
-Johnny Castaway trying to survive the hunger
+# Johnny Castaway - a game AI project
 
-# Johnny Castaway
+![image](https://github.com/merituulie/GameAI/assets/44494010/7a5642db-81c1-456a-9ac9-0ceb3981c03d)
+Johnny Castaway trying to survive the hunger by finding himself something to eat
+
 To run the program use this file:
 	MonoGame\MonoGame\bin\Windows\x86\Debug\Monogame.exe
 
