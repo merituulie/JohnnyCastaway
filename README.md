@@ -2,19 +2,15 @@
 
 ![image](https://github.com/merituulie/GameAI/assets/44494010/7a5642db-81c1-456a-9ac9-0ceb3981c03d)
 
-Johnny Castaway trying to survive the hunger by finding himself something to eat
 
-To run the program use this file:
-	MonoGame\MonoGame\bin\Windows\x86\Debug\Monogame.exe
+Johnny Castaway trying to survive the hunger by finding himself something to eat.
+To run the program, run the MonoGame.exe file.
 
-Credits, Authors
- 
+Sprites: 
   Coconut: https://imgbin.com/, author: knopiczka
-  
   Palm tree: https://ya-webdesign.com/image/leaf-sprite-png/726291.html
-
   Enjoy-Writing SpriteFont: https://www.dafont.com/
-  
+
   Island Tileset:
   License
 -------
@@ -28,8 +24,6 @@ GNU GPL 3.0:
 
 Note the file is based on the LCP contest readme so don't expect the exact little pieces used like the base one.
 *Additional license information.
-
-Assets from:
 
 LPC participants:
 ----------------
